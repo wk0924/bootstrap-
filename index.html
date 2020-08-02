@@ -1,13 +1,3 @@
-<?php
-
-include('/include/user.php');
-
-if($user['id']){
-  $sql = 'SELECT * FROM pages WHERE uid='.$user['id'].' ORDER BY created ASC';
-  $pages = $db->execute_dql($sql);
-}
-
-?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -18,12 +8,11 @@ if($user['id']){
   <meta name="description" content="可拖放排序在线编辑的Bootstrap可视化布局系统">
   <meta name="keywords" content="可视化,布局,系统">
   <title>Bootstrap网页组装系统</title>
-  <link href="/website/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/website/css/swiper.min.css" rel="stylesheet">
-  <link href="/website/css/common.css" rel="stylesheet">
-  <link href="/website/fonts/iconfont/iconfont.css" rel="stylesheet">
-  <link href="/images/favicon.png" rel="icon">
-  <script type="text/javascript" src="/website/js/swiper.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/swiper.min.css" rel="stylesheet">
+  <link href="css/common.css" rel="stylesheet">
+  <link href="fonts/iconfont/iconfont.css" rel="stylesheet">
+  <script type="text/javascript" src="js/swiper.min.js"></script>
 </head>
 
 <body class="edit">
@@ -32,7 +21,7 @@ if($user['id']){
 	
   <div class="phone-box">
 	  <p><iframe style="width:100%;" src="https://player.youku.com/embed/XNDYwMzUzODMzNg=="frameborder=0"allowfullscreen"></iframe></p>
-	  <p class="text-center">以上是视频教程，自由组装网页请使用电脑打开网址：<a href="http://wangye580.com/">http://wangye580.com/</a> 来操作</p>
+	  <p class="text-center">以上是视频教程，自由组装网页请使用电脑打开网址：<a target="_blank" href="http://wangye580.com/">http://wangye580.com/</a> 来操作</p>
   </div>
  
   <div class="col-xs-2 leftLayout">
@@ -3586,28 +3575,17 @@ if($user['id']){
     <nav class="navbar navbar-default myNavbar">
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
-          <li class="item"><a class="a" href="/website/study.html" target="_blank"><i class="iconfont icon-play"></i>视频教程<span class="round"></span></a></li>
+          <li class="item"><a class="a" href="study.html" target="_blank"><i class="iconfont icon-play"></i>视频教程<span class="round"></span></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="item"><a class="a" href="javascript:;" onclick="edit()"><i class="iconfont icon-editor"></i>编辑</a></li>
           <li class="item"><a class="a" href="javascript:;" onclick="preview()"><i class="iconfont icon-browse"></i>预览</a></li>
-          <li class="item"><a class="a" href="javascript:;" id="download" data-uid="<?php echo $user['id'];?>" data-money="<?php echo $user['money'];?>"><i class="iconfont icon-download"></i>下载</a></li>
+          <li class="item"><a class="a" href="javascript:;" id="download"><i class="iconfont icon-download"></i>下载</a></li>
           <li class="item"><a class="a" href="javascript:;" id="clear"><i class="iconfont icon-ashbin"></i>清空</a></li>
           <li class="item"><a class="a" href="javascript:;" id="add"><i class="iconfont icon-add1"></i>新增页面</a></li>
           <li class="item"><a class="a" href="javascript:;" id="advise"><i class="iconfont icon-help"></i>问题疑问?</a></li>
-          <?php if($user['id']){?>
-          <li class="item">
-			<a class="a" href="/user" target="_blank">欢迎你,
-				<span class="my-text-primary">
-					<?php echo substr_replace($user['tel'],'****','3','4'); ?>
-				</span>
-			</a>
-		  </li>
-		  <li class="item"><a class="a logout" href="javascript:;">退出</a></li>
-          <?php }else{ ?>
           <li class="item"><a class="a register-box" href="javascript:;">注册</a></li>
           <li class="item"><a class="a login-box" href="javascript:;">登录</a></li>
-          <?php }?>
         </ul>
       </div>
     </nav>
@@ -3616,9 +3594,6 @@ if($user['id']){
 		<div class="swiper-container my-swiper-1">
 			<ul class="nav nav-tabs layout-nav-ul swiper-wrapper">
 				<li class="swiper-slide active"><a href="#page" aria-controls="page" role="tab" data-toggle="tab">首页（index.html）</a></li>
-				<?php if(!empty($pages)){ foreach($pages as $item){?>
-				<li class="swiper-slide"><a href="#page<?php echo $item['id'];?>" data-id="<?php echo $item['id'];?>" data-title="<?php echo $item['page_name'];?>" data-file="<?php echo $item['file_name'];?>" aria-controls="page<?php echo $item['id'];?>" role="tab" data-toggle="tab"><?php echo $item['page_name'];?> （<?php echo $item['file_name'];?>.html）<i class="iconfont icon-set"></i><i class="iconfont icon-guanbi"></i></a></li>
-				<?php }}?>
 			</ul>
 			<div class="swiper-button-next swiper-button-arrow"></div>
 			<div class="swiper-button-prev swiper-button-arrow"></div>
@@ -3630,13 +3605,6 @@ if($user['id']){
 			  <div id="ImporNotes">请拖动到此区域内</div>
           </div>
         </li>
-        <?php if(!empty($pages)){ foreach($pages as $item){?>
-        <li class="tab-pane layout-box-li" id="page<?php echo $item['id'];?>" data-title="<?php echo $item['page_name'];?>" data-file="<?php echo $item['file_name'];?>" data-id="<?php echo $item['id'];?>">
-          <div class="layout-box ui-sortable container">
-			  <div id="ImporNotes">请拖动到此区域内</div>
-          </div>
-        </li>
-        <?php }}?>
       </ul>
 	  
     </div>
@@ -3663,11 +3631,11 @@ if($user['id']){
   </div>
 </div>
 
-<script type="text/javascript" src="/website/js/jquery.min.js"></script>
-<script type="text/javascript" src="/website/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/website/js/jquery-ui.js"></script>
-<script type="text/javascript" src="/website/standard-all/ckeditor.js"></script>
-<script type="text/javascript" src="/website/js/layer/layer.js"></script>
-<script type="text/javascript" src="/website/js/common.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="standard-all/ckeditor.js"></script>
+<script type="text/javascript" src="js/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>

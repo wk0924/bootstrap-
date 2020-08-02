@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户登录</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .box { padding: 20px;}
+        .btn-primary { background-color: #1890ff; border-color: #1890ff;}
+        .btn-primary:hover, .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .btn-primary.focus, .btn-primary:active.focus, .btn-primary.active.focus { background-color: #5CADFF; border-color: #5CADFF; outline: none;}
+        .text-primary, a { color: #1890ff;}
+    </style>
+
+</head>
+<body>
+
+<div class="panel-body">
+    <h3 class="text-center text-primary">登录</h3>
+    <br/>
+    <div class="form-group">
+        <input id="tel" type="text" class="form-control" placeholder="输入手机号" min="1">
+    </div>
+    <div class="form-group">
+        <input id="password" type="password" class="form-control" placeholder="输入密码">
+    </div>
+    <p><a href="javascript:;" class="btn btn-primary btn-block" id="login-btn">立即登录</a></p>
+    <hr/>
+    <p class="text-center">没有账号？<a href="?m=register">立即注册新账号 ></a></p>
+</div>
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/layer/layer.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    //提交登录
+    $(document).ready(function(){
+        $("#password").keyup(function(event){
+            if(event.keyCode ==13){
+                $("#login-btn").trigger("click");
+            }
+        });
+        $("#login-btn").click(function () {
+            var formTel = $("#tel").val();
+            var formPassword = $("#password").val();
+            if(formTel==""||formPassword==""){
+                layer.msg("手机号或者密码不能为空！");
+            }else{
+                $.ajax({
+                    type:"post",
+                    url:"request/login.php",
+                    data:{tel:formTel, password:formPassword},
+                    dataType:"json",
+                    success: function (res) {
+                        if(res){
+                            if(res.id){
+                                //设置存储缓存为7天
+                                var Days = 7;
+                                var exp = new Date();
+                                exp.setTime(exp.getTime() + Days*24*60*60*1000);
+                                document.cookie = "userId="+res.id+"; expires="+exp.toGMTString()+"";
+                                layer.msg(res.msg);
+                                if(res.types==1){
+                                    setTimeout("top.location.reload()",1000)
+                                }
+                                if(res.types==2 || res.types==0){
+                                    setTimeout("top.location.href = '../admin';",1000)
+                                }
+                            }else{
+                                layer.msg(res.msg);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
