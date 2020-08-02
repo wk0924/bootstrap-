@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>在线HTML代码格式化、HTML代码美化工具</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta name="description" content="在线HTML代码格式化、HTML代码美化工具" />
+    <link rel="stylesheet" href="/website/formatter/css/base.css">
+    <link rel="stylesheet" href="/website/formatter/css/font.css">
+    <link rel="stylesheet" href="/website/formatter/css/style.css">
+</head>
+
+<body>
+    <div id="header">
+        <h1>HTML Formatter</h1>
+        <h2>在线HTML代码格式化、HTML代码美化工具</h2>
+    </div>
+    <div id="main">
+        <section class="tool-content-container">
+            <div class="form-group form-group-item-center">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="result-title">
+                            <strong><i class="iconfont icon-edit"></i> 将需要格式化的HTML代码粘贴到下面的文本框：</strong>
+                            <button class="btn btn-primary btn-sm btn-copy btn-copy-code" disabled>复制</button>
+                        </p>
+                        <textarea class="codemirror-control hidden" data-bindto=".btn-code-format" data-mode="htmlmixed" placeholder="请在这里输入需要格式化的HTML代码"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <fieldset>
+                            <legend>HTML格式化选项</legend>
+                            <div class="form-group form-group-item-center format-option-wrap">
+                                <div class="row">
+                                    <label class="col-xs-12 col-md-2 control-label">缩进方式</label>
+                                    <div class="col-xs-12 col-md-4">
+                                        <select id="option-indent" class="form-control">
+                                            <option value="1">以Tab方式缩进</option>
+                                            <option value="2">以2个空格缩进</option>
+                                            <option value="4">以4个空格缩进</option>
+                                            <option value="8">以8个空格缩进</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-xs-12 col-md-2 control-label">是否换行</label>
+                                    <div class="col-xs-12 col-md-4">
+                                        <select id="option-wrap-line-length" class="form-control">
+                                            <option value="0">不换行</option>
+                                            <option value="80">超过80字符换行</option>
+                                            <option value="120">超过120字符换行</option>
+                                            <option value="160">超过160字符换行</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-xs-12 col-md-2 control-label">HTML属性</label>
+                                    <div class="col-xs-12 col-md-10">
+                                        <ul class="options inline">
+                                            <li><input type="radio" class="custom-radio" name="wrap-attributes" id="option-wrap-attributes-preserve-aligned" value="preserve-aligned" checked><label for="option-wrap-attributes-preserve-aligned">保持原样</label></li>
+                                            <li><input type="radio" class="custom-radio" name="wrap-attributes" id="option-wrap-attributes-force-aligned" value="force-aligned"><label for="option-wrap-attributes-force-aligned">每个属性占一行</label></li>
+                                            <li><input type="radio" class="custom-radio" name="wrap-attributes" id="option-wrap-attributes-aligned-multiple" value="aligned-multiple"><label for="option-wrap-attributes-aligned-multiple">合并到一行显示</label></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-xs-12 col-md-2 align-self-start control-label">其他选项</label>
+                                    <div class="col-xs-12 col-md-9">
+                                        <ul class="options">
+                                            <li><input type="checkbox" class="custom-checkbox" id="option-indent-inner-html" value="1" checked><label for="option-indent-inner-html">对 <code>&lt;head&gt;</code> 块和 <code>&lt;body&gt;</code> 块进行缩进</label></li>
+                                            <li><input type="checkbox" class="custom-checkbox" id="option-end-with-newline" value="1"><label for="option-end-with-newline">在代码的最后添加一空行</label></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="button-group mt-1">
+                            <button type="button" class="btn btn-primary btn-lg btn-code-format" data-click-handler>格式化HTML代码</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            var scripts = [], styles = [];
+            scripts.push("../../website/formatter/js/Html-Formatter.js");
+            styles.push("../..//website/formatter/css/CodeMirror.css");
+        </script>
+        <script src="/website/formatter/js/jquery-3.4.1.min.js"></script>
+        <script src="/website/formatter/js/base.js"></script>
+    </div>
+</body>
+</html>

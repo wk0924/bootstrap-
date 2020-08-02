@@ -1,0 +1,3673 @@
+<?php
+
+include('/include/user.php');
+
+if($user['id']){
+  $sql = 'SELECT * FROM pages WHERE uid='.$user['id'].' ORDER BY created ASC';
+  $pages = $db->execute_dql($sql);
+}
+
+?>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="title" content="Bootstrap拖拽布局">
+  <meta name="description" content="可拖放排序在线编辑的Bootstrap可视化布局系统">
+  <meta name="keywords" content="可视化,布局,系统">
+  <title>Bootstrap网页组装系统</title>
+  <link href="/website/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/website/css/swiper.min.css" rel="stylesheet">
+  <link href="/website/css/common.css" rel="stylesheet">
+  <link href="/website/fonts/iconfont/iconfont.css" rel="stylesheet">
+  <link href="/images/favicon.png" rel="icon">
+  <script type="text/javascript" src="/website/js/swiper.min.js"></script>
+</head>
+
+<body class="edit">
+	
+<div class="row main">
+	
+  <div class="phone-box">
+	  <p><iframe style="width:100%;" src="https://player.youku.com/embed/XNDYwMzUzODMzNg=="frameborder=0"allowfullscreen"></iframe></p>
+	  <p class="text-center">以上是视频教程，自由组装网页请使用电脑打开网址：<a href="http://wangye580.com/">http://wangye580.com/</a> 来操作</p>
+  </div>
+ 
+  <div class="col-xs-2 leftLayout">
+    <div class="logo">
+      <h4 class="font"><small>Bootstrap v3.0</small><br/>网页<span style="color: #1890ff;">自由组装</span>系统</h4>
+    </div>
+    <ul class="nav nav-pills nav-stacked ul01">
+      <li class="li01 level01">
+        <a href="javascript:;" class="li01-a"><i class="iconfont icons icon-column"></i>栅格布局<i class="iconfont icon-arrow-right"></i></a>
+        <ul class="nav nav-pills nav-stacked ul02">
+          <li class="li02">
+            <div class="layoutRow">
+              <div class="operation opera1">
+                <span class="label label-primary drag">拖动</span>
+                <span class="label label-primary remove">删除</span>
+              </div>
+              <div class="title">
+                12
+              </div>
+              <div class="view-layout">
+				  <div class="row row-fluid ">
+				  	<div class="col-xs-12 col-md-12 column"></div>
+				  </div>
+              </div>
+            </div>
+          </li>
+          <li class="li02">
+            <div class="layoutRow">
+              <div class="operation opera1">
+                <span class="label label-primary drag">拖动</span>
+                <span class="label label-primary remove">删除</span>
+              </div>
+              <div class="title">
+                6 6
+              </div>
+              <div class="view-layout">
+                <div class="row row-fluid ">
+                  <div class="col-xs-6 col-md-6 column"></div>
+                  <div class="col-xs-6 col-md-6 column"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="li02">
+            <div class="layoutRow">
+              <div class="operation opera1">
+                <span class="label label-primary drag">拖动</span>
+                <span class="label label-primary remove">删除</span>
+              </div>
+              <div class="title">
+                8 4
+              </div>
+              <div class="view-layout">
+                <div class="row row-fluid ">
+                  <div class="col-xs-8 col-md-8 column"></div>
+                  <div class="col-xs-4 col-md-4 column"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="li02">
+            <div class="layoutRow">
+              <div class="operation opera1">
+                <span class="label label-primary drag">拖动</span>
+                <span class="label label-primary remove">删除</span>
+              </div>
+              <div class="title">
+                4 8
+              </div>
+              <div class="view-layout">
+                <div class="row row-fluid ">
+                  <div class="col-xs-4 col-md-4 column"></div>
+                  <div class="col-xs-8 col-md-8 column"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="li02">
+            <div class="layoutRow">
+              <div class="operation opera1">
+                <span class="label label-primary drag">拖动</span>
+                <span class="label label-primary remove">删除</span>
+              </div>
+              <div class="title">
+                4 4 4
+              </div>
+              <div class="view-layout">
+                <div class="row row-fluid ">
+                  <div class="col-xs-4 col-md-4 column"></div>
+                  <div class="col-xs-4 col-md-4 column"></div>
+                  <div class="col-xs-4 col-md-4 column"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="li02">
+            <div class="layoutRow">
+              <div class="operation opera1">
+                <span class="label label-primary drag">拖动</span>
+                <span class="label label-primary remove">删除</span>
+              </div>
+              <div class="title">
+                3 3 3 3
+              </div>
+              <div class="view-layout">
+                <div class="row row-fluid ">
+                  <div class="col-xs-3 col-md-3 column"></div>
+                  <div class="col-xs-3 col-md-3 column"></div>
+                  <div class="col-xs-3 col-md-3 column"></div>
+                  <div class="col-xs-3 col-md-3 column"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="li02">
+            <div class="layoutRow">
+              <div class="operation opera1">
+                <span class="label label-primary drag">拖动</span>
+                <span class="label label-primary remove">删除</span>
+              </div>
+              <div class="title">
+                2 6 4
+              </div>
+              <div class="view-layout">
+                <div class="row row-fluid ">
+                  <div class="col-xs-2 col-md-2 column"></div>
+                  <div class="col-xs-6 col-md-6 column"></div>
+                  <div class="col-xs-4 col-md-4 column"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="li02">
+            <div class="layoutRow">
+              <div class="operation opera1">
+                <span class="label label-primary drag">拖动</span>
+                <span class="label label-primary remove">删除</span>
+              </div>
+              <div class="title">
+                4 6 2
+              </div>
+              <div class="view-layout">
+                <div class="row row-fluid ">
+                  <div class="col-xs-4 col-md-4 column"></div>
+                  <div class="col-xs-6 col-md-6 column"></div>
+                  <div class="col-xs-2 col-md-2 column"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="li02">
+            <div class="layoutRow">
+              <div class="operation opera1">
+                <span class="label label-primary drag">拖动</span>
+                <span class="label label-primary remove">删除</span>
+              </div>
+              <div class="title">
+                6 4 2
+              </div>
+              <div class="view-layout">
+                <div class="row row-fluid ">
+                  <div class="col-xs-6 col-md-6 column"></div>
+                  <div class="col-xs-4 col-md-4 column"></div>
+                  <div class="col-xs-2 col-md-2 column"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="li02">
+            <div class="layoutRow">
+              <div class="operation opera1">
+                <span class="label label-primary drag">拖动</span>
+                <span class="label label-primary remove">删除</span>
+              </div>
+              <div class="title">
+                6 2 4
+              </div>
+              <div class="view-layout">
+                <div class="row row-fluid ">
+                  <div class="col-xs-6 col-md-6 column"></div>
+                  <div class="col-xs-2 col-md-2 column"></div>
+                  <div class="col-xs-4 col-md-4 column"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="li02">
+            <div class="layoutRow">
+              <div class="operation opera1">
+                <span class="label label-primary drag">拖动</span>
+                <span class="label label-primary remove">删除</span>
+              </div>
+              <div class="title">
+                2 2 2 2 2 2
+              </div>
+              <div class="view-layout">
+                <div class="row row-fluid ">
+                  <div class="col-xs-2 col-md-2 column"></div>
+                  <div class="col-xs-2 col-md-2 column"></div>
+                  <div class="col-xs-2 col-md-2 column"></div>
+                  <div class="col-xs-2 col-md-2 column"></div>
+                  <div class="col-xs-2 col-md-2 column"></div>
+                  <div class="col-xs-2 col-md-2 column"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="li01">
+        <a href="javascript:;" class="li01-a"><i class="iconfont icons icon-integral"></i>基本组件<i class="iconfont icon-arrow-right"></i></a>
+        <ul class="nav nav-pills nav-stacked ul02">
+		  <li class="li02">
+		    <a class="a" href="javascript:;">间距 <i class="iconfont icon-arrow-right"></i></a>
+		    <ul class="nav nav-pills nav-stacked ul03">
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">横线</div>
+		          <div class="view-components">
+		            <hr/>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary empty-line-value">数值</span>
+		          </div>
+		          <div class="title">空行</div>
+		          <div class="view-components">
+		            <div class="empty-line"></div>
+		          </div>
+		        </div>
+		      </li>
+		    </ul>
+		  </li>
+		  <li class="li02">
+		    <a class="a" href="javascript:;">标题 <i class="iconfont icon-arrow-right"></i></a>
+		    <ul class="nav nav-pills nav-stacked ul03">
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">组合标题</div>
+		          <div class="view-components">
+		            <div class="page-header">
+		              <h1>思念在无悔里等待 <small>在诗韵里沉醉</small></h1>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">特大标题</div>
+		          <div class="view-components">
+		            <h1>h1. 这是最大的标题.</h1>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">大标题</div>
+		          <div class="view-components">
+		            <h2>h2. 这是大标题.</h2>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">中等标题</div>
+		          <div class="view-components">
+		            <h3>h3. 这是中等标题.</h3>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">普通标题</div>
+		          <div class="view-components">
+		            <h4>h4. 这是普通标题.</h4>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">小标题</div>
+		          <div class="view-components">
+		            <h5>h5. 这是小标题.</h5>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">迷你标题</div>
+		          <div class="view-components">
+		            <h6>h6. 这是迷你标题.</h6>
+		          </div>
+		        </div>
+		      </li>
+		    </ul>
+		  </li>
+		  <li class="li02">
+		    <a class="a" href="javascript:;">文本 <i class="iconfont icon-arrow-right"></i></a>
+		    <ul class="nav nav-pills nav-stacked ul03">
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">普通文本</div>
+		          <div class="view-components">
+		            <p>Bootstrap 将全局 font-size 设置为 14px，line-height 设置为 1.428。这些属性直接赋予元素和所有段落元素。另外，（段落）元素还被设置了等于 1/2 行高（即 10px）的底部外边距（margin）。</p>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">带下划线的</div>
+		          <div class="view-components">
+		            <p><u>Bootstrap 将全局 font-size 设置为 14px，line-height 设置为 1.428。这些属性直接赋予元素和所有段落元素。另外，（段落）元素还被设置了等于 1/2 行高（即 10px）的底部外边距（margin）。</u></p>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">地址文本</div>
+		          <div class="view-components">
+		            <address>
+		              <strong>Twitter, Inc.</strong><br>
+		              795 Folsom Ave, Suite 600<br>
+		              San Francisco, CA 94107<br>
+		              <abbr title="Phone">P:</abbr> (123) 456-7890
+		            </address>
+		            <address>
+		              <strong>Full Name</strong><br>
+		              <a href="mailto:#">first.last@example.com</a>
+		            </address>
+		          </div>
+		        </div>
+		      </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			      </div>
+			      <div class="title">默认引用</div>
+			      <div class="view-components">
+			        <blockquote>
+			          <p>这是一段默认的引用块。</p>
+			        </blockquote>
+			      </div>
+			    </div>
+			  </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			      </div>
+			      <div class="title">带小标题引用</div>
+			      <div class="view-components">
+			        <blockquote>
+			          <p>这是一段默认的引用块。</p>
+			          <footer>2020年02月02日 <cite title="Source Title">中国</cite></footer>
+			        </blockquote>
+			      </div>
+			    </div>
+			  </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			      </div>
+			      <div class="title">右对齐的引用</div>
+			      <div class="view-components">
+			        <blockquote class="blockquote-reverse">
+			          <p>这是一段默认的引用块。</p>
+			          <footer>2020年02月02日 <cite title="Source Title">中国</cite></footer>
+			        </blockquote>
+			      </div>
+			    </div>
+			  </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			      </div>
+			      <div class="title">地址(上下排版)</div>
+			      <div class="view-components">
+			        <dl>
+			          <dt>Rolex</dt>
+			          <dd>劳力士创始人为汉斯.威尔斯多夫，1908年他在瑞士将劳力士注册为商标。</dd>
+			          <dt>Vacheron Constantin</dt>
+			          <dd>始创于1775年的江诗丹顿已有250年历史，</dd>
+			          <dd>是世界上历史最悠久、延续时间最长的名表之一。</dd>
+			          <dt>IWC</dt>
+			          <dd>创立于1868年的万国表有“机械表专家”之称。</dd>
+			          <dt>Cartier</dt>
+			          <dd>卡地亚拥有150多年历史，是法国珠宝金银首饰的制造名家。</dd>
+			        </dl>
+			      </div>
+			    </div>
+			  </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			      </div>
+			      <div class="title">地址(左右排版)</div>
+			      <div class="view-components">
+			        <dl class="dl-horizontal">
+			          <dt>Rolex</dt>
+			          <dd>劳力士创始人为汉斯.威尔斯多夫，1908年他在瑞士将劳力士注册为商标。</dd>
+			          <dt>Vacheron Constantin</dt>
+			          <dd>始创于1775年的江诗丹顿已有250年历史，</dd>
+			          <dd>是世界上历史最悠久、延续时间最长的名表之一。</dd>
+			          <dt>IWC</dt>
+			          <dd>创立于1868年的万国表有“机械表专家”之称。</dd>
+			          <dt>Cartier</dt>
+			          <dd>卡地亚拥有150多年历史，是法国珠宝金银首饰的制造名家。</dd>
+			        </dl>
+			      </div>
+			    </div>
+			  </li>
+		    </ul>
+		  </li>
+		  <li class="li02">
+		    <a class="a" href="javascript:;">列表 <i class="iconfont icon-arrow-right"></i></a>
+		    <ul class="nav nav-pills nav-stacked ul03">
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary add-list">+1</span>
+				  </div>
+		          <div class="title">无序列表</div>
+		          <div class="view-components">
+		            <ul>
+		              <li>新闻资讯</li>
+		              <li>体育竞技</li>
+		              <li>娱乐八卦</li>
+		              <li>前沿科技</li>
+		              <li>环球财经</li>
+		              <li>天气预报</li>
+		              <li>房产家居</li>
+		              <li>网络游戏</li>
+		            </ul>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary add-list">+1</span>
+				  </div>
+		          <div class="title">有序列表</div>
+		          <div class="view-components">
+		            <ol>
+		              <li>新闻资讯</li>
+		              <li>体育竞技</li>
+		              <li>娱乐八卦</li>
+		              <li>前沿科技</li>
+		              <li>环球财经</li>
+		              <li>天气预报</li>
+		              <li>房产家居</li>
+		              <li>网络游戏</li>
+		            </ol>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary add-list">+1</span>
+				  </div>
+		          <div class="title">无样式列表</div>
+		          <div class="view-components">
+		            <ul class="list-unstyled">
+		              <li>新闻资讯</li>
+		              <li>体育竞技</li>
+		              <li>娱乐八卦</li>
+		              <li>前沿科技</li>
+		              <li>环球财经</li>
+		              <li>天气预报</li>
+		              <li>房产家居</li>
+		              <li>网络游戏</li>
+		            </ul>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary add-list">+1</span>
+				  </div>
+		          <div class="title">横向列表</div>
+		          <div class="view-components">
+		            <ul class="list-inline">
+		              <li>新闻资讯</li>
+		              <li>体育竞技</li>
+		              <li>娱乐八卦</li>
+		              <li>前沿科技</li>
+		              <li>环球财经</li>
+		              <li>天气预报</li>
+		              <li>房产家居</li>
+		              <li>网络游戏</li>
+		            </ul>
+		          </div>
+		        </div>
+		      </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary add-list">+1</span>
+				  </div>
+			      <div class="title">基本列表组</div>
+			      <div class="view-components">
+			        <ul class="list-group">
+			          <li class="list-group-item">雨天，记得带把伞</li>
+			          <li class="list-group-item">红尘陌上雪，散落随花开</li>
+			          <li class="list-group-item">告别是我们最好的归宿</li>
+			          <li class="list-group-item">等一个永远都不会来的人</li>
+			          <li class="list-group-item">没有你陪伴的日子，我真的好孤单</li>
+			        </ul>
+			      </div>
+			    </div>
+			  </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary add-list">+1</span>
+				  </div>
+			      <div class="title">带徽章列表组</div>
+			      <div class="view-components">
+			        <ul class="list-group">
+			          <li class="list-group-item"><span class="badge">14</span>雨天，记得带把伞</li>
+			          <li class="list-group-item"><span class="badge">14</span>红尘陌上雪，散落随花开</li>
+			          <li class="list-group-item"><span class="badge">14</span>告别是我们最好的归宿</li>
+			          <li class="list-group-item"><span class="badge">14</span>等一个永远都不会来的人</li>
+			          <li class="list-group-item"><span class="badge">14</span>没有你陪伴的日子，我真的好孤单</li>
+			        </ul>
+			      </div>
+			    </div>
+			  </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary add-list">+1</span>
+				  </div>
+			      <div class="title">带链接列表组</div>
+			      <div class="view-components">
+			        <div class="list-group">
+			          <a href="#" class="list-group-item">雨天，记得带把伞</a>
+			          <a href="#" class="list-group-item">红尘陌上雪，散落随花开</a>
+			          <a href="#" class="list-group-item">告别是我们最好的归宿</a>
+			          <a href="#" class="list-group-item">等一个永远都不会来的人</a>
+			          <a href="#" class="list-group-item">没有你陪伴的日子，我真的好孤单</a>
+			        </div>
+			      </div>
+			    </div>
+			  </li>
+		    </ul>
+		  </li>
+		  <li class="li02">
+		    <a class="a" href="javascript:;">表格 <i class="iconfont icon-arrow-right"></i></a>
+		    <ul class="nav nav-pills nav-stacked ul03">
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary add-table-colspan">行+1</span>
+					<span class="label label-primary delete-table-colspan">行-1</span>
+					<span class="label label-primary add-table-rowspan">列+1</span>
+					<span class="label label-primary delete-table-rowspan">列-1</span>
+				  </div>
+		          <div class="title">基础表格</div>
+		          <div class="view-components">
+		            <table class="table">
+		              <tbody>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              </tbody>
+		            </table>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary add-table-colspan">行+1</span>
+					<span class="label label-primary delete-table-colspan">行-1</span>
+					<span class="label label-primary add-table-rowspan">列+1</span>
+					<span class="label label-primary delete-table-rowspan">列-1</span>
+				  </div>
+		          <div class="title">带条纹的</div>
+		          <div class="view-components">
+		            <table class="table table-striped">
+		              <tbody>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              </tbody>
+		            </table>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary add-table-colspan">行+1</span>
+					<span class="label label-primary delete-table-colspan">行-1</span>
+					<span class="label label-primary add-table-rowspan">列+1</span>
+					<span class="label label-primary delete-table-rowspan">列-1</span>
+				  </div>
+		          <div class="title">带边框的</div>
+		          <div class="view-components">
+		            <table class="table table-bordered">
+		              <tbody>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              </tbody>
+		            </table>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary add-table-colspan">行+1</span>
+					<span class="label label-primary delete-table-colspan">行-1</span>
+					<span class="label label-primary add-table-rowspan">列+1</span>
+					<span class="label label-primary delete-table-rowspan">列-1</span>
+				  </div>
+		          <div class="title">鼠标特效</div>
+		          <div class="view-components">
+		            <table class="table table-hover">
+		              <tbody>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              <tr>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		                <td>行</td>
+		              </tr>
+		              </tbody>
+		            </table>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary add-table-colspan">行+1</span>
+					<span class="label label-primary delete-table-colspan">行-1</span>
+					<span class="label label-primary add-table-rowspan">列+1</span>
+					<span class="label label-primary delete-table-rowspan">列-1</span>
+				  </div>
+		          <div class="title">紧缩表格</div>
+		          <div class="view-components">
+		            <table class="table table-condensed">
+		              <tbody>
+		              <tr>
+		                <td>1</td>
+		                <td>测试产品01</td>
+		                <td>01/04/2012</td>
+		                <td>代付款</td>
+		              </tr>
+		              <tr>
+		                <td>2</td>
+		                <td>测试产品02</td>
+		                <td>01/04/2012</td>
+		                <td>已付款</td>
+		              </tr>
+		              <tr>
+		                <td>3</td>
+		                <td>测试产品03</td>
+		                <td>02/04/2012</td>
+		                <td>已发货</td>
+		              </tr>
+		              <tr>
+		                <td>4</td>
+		                <td>测试产品04</td>
+		                <td>03/04/2012</td>
+		                <td>已签收</td>
+		              </tr>
+		              </tbody>
+		            </table>
+		          </div>
+		        </div>
+		      </li>
+		    </ul>
+		  </li>
+		  <li class="li02">
+		    <a class="a" href="javascript:;">表单 <i class="iconfont icon-arrow-right"></i></a>
+		    <ul class="nav nav-pills nav-stacked ul03">
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">登录表单1</div>
+		          <div class="view-components">
+		            <form>
+		              <div class="form-group">
+		                <label>账号</label>
+		                <input type="text" class="form-control" placeholder="账号">
+		              </div>
+		              <div class="form-group">
+		                <label>密码</label>
+		                <input type="password" class="form-control" placeholder="密码">
+		              </div>
+		              <div class="checkbox">
+		                <label>
+		                  <input type="checkbox"> 是否记住密码
+		                </label>
+		              </div>
+		              <button type="submit" class="btn btn-primary">提交</button>
+		            </form>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">登录表单2</div>
+		          <div class="view-components">
+		            <form class="form-horizontal">
+		              <div class="form-group">
+		                <label class="col-sm-2 control-label">用户名</label>
+		                <div class="col-sm-10">
+		                  <input type="text" class="form-control" placeholder="请输入用户名">
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <label class="col-sm-2 control-label">密码</label>
+		                <div class="col-sm-10">
+		                  <input type="password" class="form-control" placeholder="请输入密码">
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <div class="col-sm-offset-2 col-sm-10">
+		                  <div class="checkbox">
+		                    <label>
+		                      <input type="checkbox"> 记住密码
+		                    </label>
+		                  </div>
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <div class="col-sm-offset-2 col-sm-10">
+		                  <button type="submit" class="btn btn-primary">提交表单</button>
+		                </div>
+		              </div>
+		            </form>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">注册表单1</div>
+		          <div class="view-components">
+		            <form>
+		              <div class="form-group">
+		                <label>账号</label>
+		                <input type="text" class="form-control" placeholder="请输入用户名">
+		              </div>
+		              <div class="form-group">
+		                <label>密码</label>
+		                <input type="password" class="form-control" placeholder="请输入密码">
+		              </div>
+		              <div class="form-group">
+		                <label>确认密码</label>
+		                <input type="password" class="form-control" placeholder="请再次输入密码">
+		              </div>
+		              <button type="submit" class="btn btn-primary">提交</button>
+		            </form>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">注册表单2</div>
+		          <div class="view-components">
+		            <form class="form-horizontal">
+		              <div class="form-group">
+		                <label class="col-sm-2 control-label">用户名</label>
+		                <div class="col-sm-10">
+		                  <input type="text" class="form-control" placeholder="请输入用户名">
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <label class="col-sm-2 control-label">密码</label>
+		                <div class="col-sm-10">
+		                  <input type="password" class="form-control" placeholder="请输入密码">
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <label class="col-sm-2 control-label">确认密码</label>
+		                <div class="col-sm-10">
+		                  <input type="password" class="form-control" placeholder="请再次输入密码">
+		                </div>
+		              </div>
+		              <div class="form-group">
+		                <div class="col-sm-offset-2 col-sm-10">
+		                  <button type="submit" class="btn btn-primary">提交表单</button>
+		                </div>
+		              </div>
+		            </form>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">搜索1</div>
+		          <div class="view-components">
+		            <form class="form-inline">
+		              <div class="form-group">
+		                <label class="sr-only">搜索</label>
+		                <input type="email" class="form-control" placeholder="请搜索关键字">
+		              </div>
+		              <button type="submit" class="btn btn-default">搜索</button>
+		            </form>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">搜索2</div>
+		          <div class="view-components">
+		            <div class="input-group">
+		              <input type="text" class="form-control" placeholder="Search for...">
+		              <span class="input-group-btn">
+		                <button class="btn btn-default" type="button">Go!</button>
+		              </span>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		    </ul>
+		  </li>
+		  <li class="li02">
+		    <a class="a" href="javascript:;">按钮 <i class="iconfont icon-arrow-right"></i></a>
+		    <ul class="nav nav-pills nav-stacked ul03">
+		      <li class="li03">
+		        <div class="box inline-elements">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+				  </div>
+		          <div class="title">白色按钮</div>
+		          <div class="view-components">
+		            <button class="btn btn-default" type="button">白色按钮</button>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box inline-elements">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary color">背景</span>
+				  </div>
+		          <div class="title">自定义颜色的</div>
+		          <div class="view-components">
+		            <button class="btn btn-primary new-background" type="button">自定义颜色的</button>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">按钮组</div>
+		          <div class="view-components">
+		            <div class="text-center">
+		              <div class="btn-group" role="group" aria-label="...">
+		                <button type="button" class="btn btn-default">左</button>
+		                <button type="button" class="btn btn-default">中</button>
+		                <button type="button" class="btn btn-default">右</button>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">全屏按钮组</div>
+		          <div class="view-components">
+		            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+		              <div class="btn-group" role="group">
+		                <button type="button" class="btn btn-default">左</button>
+		              </div>
+		              <div class="btn-group" role="group">
+		                <button type="button" class="btn btn-default">中</button>
+		              </div>
+		              <div class="btn-group" role="group">
+		                <button type="button" class="btn btn-default">右</button>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">下拉按钮</div>
+		          <div class="view-components">
+		            <div class="btn-group">
+		              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		                下拉按钮 <span class="caret"></span>
+		              </button>
+		              <ul class="dropdown-menu">
+		                <li><a href="#">下拉子选项1</a></li>
+		                <li><a href="#">下拉子选项2</a></li>
+		                <li><a href="#">下拉子选项3</a></li>
+		                <li><a href="#">下拉子选项4</a></li>
+		                <li><a href="#">下拉子选项5</a></li>
+		              </ul>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		    </ul>
+		  </li>
+		  <li class="li02">
+		    <a class="a" href="javascript:;">图片 <i class="iconfont icon-arrow-right"></i></a>
+		    <ul class="nav nav-pills nav-stacked ul03">
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">普通图片</div>
+		          <div class="view-components">
+		            <div><img class="img-responsive" src="/images/a.jpg"></div>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">圆角图片</div>
+		          <div class="view-components">
+		            <div><img class="img-responsive img-rounded" src="/images/a.jpg"></div>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">圆形图片</div>
+		          <div class="view-components">
+		            <div><img class="img-responsive img-circle" src="/images/a.jpg"></div>
+		          </div>
+		        </div>
+		      </li>
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">带边框图片</div>
+		          <div class="view-components">
+		            <div><img class="img-thumbnail" src="/images/a.jpg"></div>
+		          </div>
+		        </div>
+		      </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			      </div>
+			      <div class="title">全屏图片</div>
+			      <div class="view-components">
+			        <div><img src="/images/list_banner.jpg" style="width:100%;"></div>
+			      </div>
+			    </div>
+			  </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			      </div>
+			      <div class="title">居中图片</div>
+			      <div class="view-components">
+			        <div class="text-center"><img src="/images/a.jpg" class="img-responsive"></div>
+			      </div>
+			    </div>
+			  </li>
+		    </ul>
+		  </li>
+          <li class="li02">
+            <a class="a" href="javascript:;">导航 <i class="iconfont icon-arrow-right"></i></a>
+            <ul class="nav nav-pills nav-stacked ul03">
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">通用导航</div>
+                  <div class="view-components">
+                    <nav class="navbar navbar-default">
+                      <div class="container-fluid">
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a class="navbar-brand" href="#">网站名称</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                          <ul class="nav navbar-nav">
+                            <li><a href="#">导航栏1</a></li>
+                            <li><a href="#">导航栏2</a></li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">导航栏3 <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">下拉子栏目1</a></li>
+                                <li><a href="#">下拉子栏目2</a></li>
+                                <li><a href="#">下拉子栏目3</a></li>
+                                <li><a href="#">下拉子栏目4</a></li>
+                                <li><a href="#">下拉子栏目5</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                          <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="请输入搜索内容...">
+                            </div>
+                            <button type="submit" class="btn btn-default">搜索</button>
+                          </form>
+                          <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">注册</a></li>
+                            <li><a href="#">登录</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary color">背景</span>
+				  </div>
+			      <div class="title">自定义颜色的</div>
+			      <div class="view-components">
+			        <nav class="navbar navbar-inverse new-background">
+			          <div class="container-fluid">
+			            <div class="navbar-header">
+			              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" aria-expanded="false">
+			                <span class="sr-only">Toggle navigation</span>
+			                <span class="icon-bar"></span>
+			                <span class="icon-bar"></span>
+			                <span class="icon-bar"></span>
+			              </button>
+			              <a class="navbar-brand" href="#">网站名称</a>
+			            </div>
+			            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
+			              <ul class="nav navbar-nav">
+			                <li><a href="#">栏目一</a></li>
+			                <li><a href="#">栏目二</a></li>
+			                <li><a href="#">栏目三</a></li>
+			                <li><a href="#">栏目四</a></li>
+			                <li><a href="#">栏目五</a></li>
+			              </ul>
+			            </div>
+			          </div>
+			        </nav>
+			      </div>
+			    </div>
+			  </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">文字导航</div>
+                  <div class="view-components">
+                    <nav class="navbar navbar-default">
+                      <div class="container-fluid">
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a class="navbar-brand" href="#">网站名称</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                          <ul class="nav navbar-nav">
+                            <li><a href="#">栏目一</a></li>
+                            <li><a href="#">栏目二</a></li>
+                            <li><a href="#">栏目三</a></li>
+                            <li><a href="#">栏目四</a></li>
+                            <li><a href="#">栏目五</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+				  </div>
+			      <div class="title">两端对齐导航</div>
+			      <div class="view-components">
+					<div class="panel panel-default">
+						<ul class="nav nav-pills nav-justified">
+							<li><a href="#">栏目一</a></li>
+							<li><a href="#">栏目二</a></li>
+							<li><a href="#">栏目三</a></li>
+							<li><a href="#">栏目四</a></li>
+							<li><a href="#">栏目五</a></li>
+						</ul>
+					</div>
+			      </div>
+			    </div>
+			  </li>
+			  <li class="li03">
+			    <div class="box">
+					<div class="operation opera2">
+						<span class="label label-primary drag">拖动</span>
+						<span class="label label-primary remove">删除</span>
+						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+						<span class="label label-primary color">背景</span>
+					</div>
+					<div class="title">自定义颜色的</div>
+					<div class="view-components">
+						<div class="panel panel-default new-background">
+							<ul class="nav nav-pills nav-justified">
+								<li><a href="#">栏目一</a></li>
+								<li><a href="#">栏目二</a></li>
+								<li><a href="#">栏目三</a></li>
+								<li><a href="#">栏目四</a></li>
+								<li><a href="#">栏目五</a></li>
+							</ul>
+						</div>
+			      </div>
+			    </div>
+			  </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">路径导航</div>
+                  <div class="view-components">
+                    <ol class="breadcrumb">
+                      <li><a href="#">主页</a></li>
+                      <li><a href="#">类目</a></li>
+                      <li class="active">主题</li>
+                    </ol>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="li02">
+            <a class="a" href="javascript:;">翻页 <i class="iconfont icon-arrow-right"></i></a>
+            <ul class="nav nav-pills nav-stacked ul03">
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">左对齐翻页</div>
+                  <div class="view-components">
+                    <nav aria-label="Page navigation">
+                      <ul class="pagination">
+                        <li>
+                          <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                          <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">居中翻页</div>
+                  <div class="view-components">
+                    <div class="text-center">
+                      <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                          <li>
+                            <a href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                          <li>
+                            <a href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">右对齐翻页</div>
+                  <div class="view-components">
+                    <div class="text-right">
+                      <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                          <li>
+                            <a href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                          <li>
+                            <a href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="li02">
+            <a class="a" href="javascript:;">标签 <i class="iconfont icon-arrow-right"></i></a>
+            <ul class="nav nav-pills nav-stacked ul03">
+              <li class="li03">
+                <div class="box inline-elements">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">灰色标签</div>
+                  <div class="view-components">
+                    <span class="label label-default">灰色</span>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box inline-elements">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary color">背景</span>
+				  </div>
+                  <div class="title">自定义颜色的</div>
+                  <div class="view-components">
+                    <span class="label label-primary new-background">自定义颜色的</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="li02">
+            <a class="a" href="javascript:;">徽章 <i class="iconfont icon-arrow-right"></i></a>
+            <ul class="nav nav-pills nav-stacked ul03">
+              <li class="li03">
+                <div class="box inline-elements">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">普通徽章</div>
+                  <div class="view-components">
+                    <span class="badge">1</span>
+                  </div>
+                </div>
+              </li>
+			  <li class="li03">
+			    <div class="box inline-elements">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary color">背景</span>
+				  </div>
+			      <div class="title">自定义颜色的</div>
+			      <div class="view-components">
+			        <span class="badge new-background">自定义颜色的</span>
+			      </div>
+			    </div>
+			  </li>
+              <li class="li03">
+                <div class="box inline-elements">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+					<span class="label label-primary color">背景</span>
+				  </div>
+                  <div class="title">按钮徽章</div>
+                  <div class="view-components">
+                    <button class="btn btn-primary new-background" type="button">按钮 <span class="badge">4</span></button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="li02">
+            <a class="a" href="javascript:;">巨幕 <i class="iconfont icon-arrow-right"></i></a>
+            <ul class="nav nav-pills nav-stacked ul03">
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">普通巨幕</div>
+                  <div class="view-components">
+                    <div class="jumbotron">
+                      <h1>每逢佳节倍思亲</h1>
+                      <p>一叶落便知秋意浓，即使江南的绿色褪色之期晚了几许，南飞的大雁也会在天空一会儿排成一字，一会儿排成人字，秋天真的来了，中秋真的来了，国庆真的来了。</p>
+                      <p><a class="btn btn-primary btn-lg" href="#" role="button">查看更多</a></p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="li02">
+            <a class="a" href="javascript:;">组合图文 <i class="iconfont icon-arrow-right"></i></a>
+            <ul class="nav nav-pills nav-stacked ul03">
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">1列</div>
+                  <div class="view-components">
+                    <div class="thumbnail"> <img alt="300x200" src="/images/1.jpg">
+                      <div class="caption" contenteditable="true">
+                        <h3>我的幸福刚刚好</h3>
+                        <p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好的两个人，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+                        <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">2列</div>
+                  <div class="view-components">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/1.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>我的幸福刚刚好</h3>
+                            <p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/2.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>东风慢慢地走了</h3>
+                            <p class="text-muted">外面的花，开始了挣扎。东风来了，却已经用尽了全力，然后就开始和大地有了距离。也许是东风感到了疲惫，也许是东风很累，想要留下一段时光的静谧。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">3列</div>
+                  <div class="view-components">
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/1.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>我的幸福刚刚好</h3>
+                            <p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-4">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/2.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>东风慢慢地走了</h3>
+                            <p class="text-muted">外面的花，开始了挣扎。东风来了，却已经用尽了全力，然后就开始和大地有了距离。也许是东风感到了疲惫，也许是东风很累，想要留下一段时光的静谧。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-4">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/3.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>时间煮雨</h3>
+                            <p class="text-muted">风吹雨成花，时间追不上白马。你年少掌心的梦话，依然紧握着吗？云翻涌成夏，眼泪被岁月蒸发，这条路上的你我她，有谁迷路吗……</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">4列</div>
+                  <div class="view-components">
+                    <div class="row">
+                      <div class="col-xs-3">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/1.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>我的幸福刚刚好</h3>
+                            <p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-3">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/2.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>东风慢慢地走了</h3>
+                            <p class="text-muted">外面的花，开始了挣扎。东风来了，却已经用尽了全力，然后就开始和大地有了距离。也许是东风感到了疲惫，也许是东风很累，想要留下一段时光的静谧。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-3">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/3.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>我的幸福刚刚好</h3>
+                            <p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-3">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/4.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>东风慢慢地走了</h3>
+                            <p class="text-muted">外面的花，开始了挣扎。东风来了，却已经用尽了全力，然后就开始和大地有了距离。也许是东风感到了疲惫，也许是东风很累，想要留下一段时光的静谧。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">5列</div>
+                  <div class="view-components">
+                    <div class="row">
+                      <div class="col-xs-5">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/1.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>我的幸福刚刚好</h3>
+                            <p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-5">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/2.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>东风慢慢地走了</h3>
+                            <p class="text-muted">外面的花，开始了挣扎。东风来了，却已经用尽了全力，然后就开始和大地有了距离。也许是东风感到了疲惫，也许是东风很累，想要留下一段时光的静谧。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-5">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/3.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>我的幸福刚刚好</h3>
+                            <p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-5">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/4.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>东风慢慢地走了</h3>
+                            <p class="text-muted">外面的花，开始了挣扎。东风来了，却已经用尽了全力，然后就开始和大地有了距离。也许是东风感到了疲惫，也许是东风很累，想要留下一段时光的静谧。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-5">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/5.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>我的幸福刚刚好</h3>
+                            <p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">6列</div>
+                  <div class="view-components">
+                    <div class="row">
+                      <div class="col-xs-2">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/1.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>我的幸福刚刚好</h3>
+                            <p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-2">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/2.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>东风慢慢地走了</h3>
+                            <p class="text-muted">外面的花，开始了挣扎。东风来了，却已经用尽了全力，然后就开始和大地有了距离。也许是东风感到了疲惫，也许是东风很累，想要留下一段时光的静谧。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-2">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/3.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>我的幸福刚刚好</h3>
+                            <p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-2">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/4.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>东风慢慢地走了</h3>
+                            <p class="text-muted">外面的花，开始了挣扎。东风来了，却已经用尽了全力，然后就开始和大地有了距离。也许是东风感到了疲惫，也许是东风很累，想要留下一段时光的静谧。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-2">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/5.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>我的幸福刚刚好</h3>
+                            <p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-2">
+                        <div class="thumbnail"> <img alt="300x200" src="/images/6.jpg">
+                          <div class="caption" contenteditable="true">
+                            <h3>东风慢慢地走了</h3>
+                            <p class="text-muted">外面的花，开始了挣扎。东风来了，却已经用尽了全力，然后就开始和大地有了距离。也许是东风感到了疲惫，也许是东风很累，想要留下一段时光的静谧。</p>
+                            <p><a class="btn btn-primary" href="#">浏览</a> <a class="btn btn-default" href="#">分享</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="li02">
+            <a class="a" href="javascript:;">警告框 <i class="iconfont icon-arrow-right"></i></a>
+            <ul class="nav nav-pills nav-stacked ul03">
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">红色</div>
+                  <div class="view-components">
+                    <div class="alert alert-danger">我是红色警告框。</div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">绿色</div>
+                  <div class="view-components">
+                    <div class="alert alert-success">我是绿色警告框。</div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">蓝色</div>
+                  <div class="view-components">
+                    <div class="alert alert-info">我是蓝色警告框。</div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">黄色</div>
+                  <div class="view-components">
+                    <div class="alert alert-warning">我是黄色警告框。</div>
+                  </div>
+                </div>
+              </li>
+			  
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			      </div>
+			      <div class="title">带删除的红色</div>
+			      <div class="view-components">
+			        <div class="alert alert-danger">
+			          <button type="button" class="close" data-dismiss="alert">×</button>
+			          <h4>提示!</h4>
+			          <strong>警告!</strong> 请注意你的个人隐私安全.
+			        </div>
+			      </div>
+			    </div>
+			  </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			      </div>
+			      <div class="title">带删除的绿色</div>
+			      <div class="view-components">
+			        <div class="alert alert-success">
+			          <button type="button" class="close" data-dismiss="alert">×</button>
+			          <h4>提示!</h4>
+			          <strong>警告!</strong> 请注意你的个人隐私安全.
+			        </div>
+			      </div>
+			    </div>
+			  </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			      </div>
+			      <div class="title">带删除的蓝色</div>
+			      <div class="view-components">
+			        <div class="alert alert-info">
+			          <button type="button" class="close" data-dismiss="alert">×</button>
+			          <h4>提示!</h4>
+			          <strong>警告!</strong> 请注意你的个人隐私安全.
+			        </div>
+			      </div>
+			    </div>
+			  </li>
+			  <li class="li03">
+			    <div class="box">
+			      <div class="operation opera2">
+			        <span class="label label-primary drag">拖动</span>
+			        <span class="label label-primary remove">删除</span>
+			        <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			      </div>
+			      <div class="title">带删除的黄色</div>
+			      <div class="view-components">
+			        <div class="alert alert-warning">
+			          <button type="button" class="close" data-dismiss="alert">×</button>
+			          <h4>提示!</h4>
+			          <strong>警告!</strong> 请注意你的个人隐私安全.
+			        </div>
+			      </div>
+			    </div>
+			  </li>
+			  
+            </ul>
+          </li>
+          <li class="li02">
+            <a class="a" href="javascript:;">进度条 <i class="iconfont icon-arrow-right"></i></a>
+            <ul class="nav nav-pills nav-stacked ul03">
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">蓝色</div>
+                  <div class="view-components">
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">绿色</div>
+                  <div class="view-components">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">浅蓝色</div>
+                  <div class="view-components">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">黄色</div>
+                  <div class="view-components">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">红色</div>
+                  <div class="view-components">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        60%
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="li02">
+            <a class="a" href="javascript:;">媒体对象 <i class="iconfont icon-arrow-right"></i></a>
+            <ul class="nav nav-pills nav-stacked ul03">
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">左图</div>
+                  <div class="view-components">
+                    <div class="media">
+                      <div class="media-left">
+                        <a href="#">
+                          <img class="media-object" src="/images/a.jpg" />
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">雨天，记得带把伞</h4>
+                        <p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">右图</div>
+                  <div class="view-components">
+                    <div class="media">
+                      <div class="media-body">
+                        <h4 class="media-heading">雨天，记得带把伞</h4>
+                        <p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+                      </div>
+                      <div class="media-right">
+                        <a href="#">
+                          <img class="media-object" src="/images/a.jpg" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">左右图</div>
+                  <div class="view-components">
+                    <div class="media">
+                      <div class="media-left">
+                        <a href="#">
+                          <img class="media-object" src="/images/a.jpg" />
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">雨天，记得带把伞</h4>
+                        <p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+                      </div>
+                      <div class="media-right">
+                        <a href="#">
+                          <img class="media-object" src="/images/a.jpg" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">垂直居中</div>
+                  <div class="view-components">
+                    <div class="media">
+                      <div class="media-left media-middle">
+                        <a href="#">
+                          <img class="media-object" src="/images/a.jpg" />
+                        </a>
+                      </div>
+                      <div class="media-body media-middle">
+                        <h4 class="media-heading">雨天，记得带把伞</h4>
+                        <p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="li02">
+            <a class="a" href="javascript:;">面板 <i class="iconfont icon-arrow-right"></i></a>
+            <ul class="nav nav-pills nav-stacked ul03">
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">基础面板</div>
+                  <div class="view-components">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        捧起一捧故乡土，那是无尽的思念。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">带标题的</div>
+                  <div class="view-components">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">乡情</h3>
+                      </div>
+                      <div class="panel-body">
+                        捧起一捧故乡土，那是无尽的思念。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">带脚注的</div>
+                  <div class="view-components">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        捧起一捧故乡土，那是无尽的思念。
+                      </div>
+                      <div class="panel-footer">
+                        描写乡情的美文
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">蓝色的</div>
+                  <div class="view-components">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">乡情</h3>
+                      </div>
+                      <div class="panel-body">
+                        捧起一捧故乡土，那是无尽的思念。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">绿色的</div>
+                  <div class="view-components">
+                    <div class="panel panel-success">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">乡情</h3>
+                      </div>
+                      <div class="panel-body">
+                        捧起一捧故乡土，那是无尽的思念。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">浅蓝色的</div>
+                  <div class="view-components">
+                    <div class="panel panel-info">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">乡情</h3>
+                      </div>
+                      <div class="panel-body">
+                        捧起一捧故乡土，那是无尽的思念。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">黄色的</div>
+                  <div class="view-components">
+                    <div class="panel panel-warning">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">乡情</h3>
+                      </div>
+                      <div class="panel-body">
+                        捧起一捧故乡土，那是无尽的思念。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">红色的</div>
+                  <div class="view-components">
+                    <div class="panel panel-danger">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">乡情</h3>
+                      </div>
+                      <div class="panel-body">
+                        捧起一捧故乡土，那是无尽的思念。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+		  <li class="li02">
+		    <a class="a" href="javascript:;">切换卡 <i class="iconfont icon-arrow-right"></i></a>
+		    <ul class="nav nav-pills nav-stacked ul03">
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">切换卡</div>
+		          <div class="view-components" id="tabs">
+		              <ul class="nav nav-tabs" role="tablist">
+		                <li role="presentation" class="active"><a href="#tab01" aria-controls="tab01" role="tab" data-toggle="tab">按钮一</a></li>
+		                <li role="presentation"><a href="#tab02" aria-controls="tab02" role="tab" data-toggle="tab">按钮二</a></li>
+		                <li role="presentation"><a href="#tab03" aria-controls="tab03" role="tab" data-toggle="tab">按钮三</a></li>
+		                <li role="presentation"><a href="#tab04" aria-controls="tab04" role="tab" data-toggle="tab">按钮四</a></li>
+		              </ul>
+		              <div class="tab-content panel-body">
+		                <div role="tabpanel" class="tab-pane active" id="tab01">
+		                  <p>当清晨的一缕阳光透过窗帘上的空隙映照在沉睡的脸庞时，微微张开的双眼朦胧地注视着周遭的一切，新的一天悄然而至。</p>
+		                </div>
+		                <div role="tabpanel" class="tab-pane" id="tab02">
+		                  <p>时光的单车飞快驶去，岁月的倒影也将消失，白天与黑夜不停的交替，轮回的四季斑驳了谁的岁月，蹉跎了谁的年华。</p>
+		                </div>
+		                <div role="tabpanel" class="tab-pane" id="tab03">
+		                  <p>当岁月和美丽的回忆已成为风中的叹息，我们伤感的眼里也许依然残存旧时的泪痕，模糊了视线，不敢轻易触碰。</p>
+		                </div>
+		                <div role="tabpanel" class="tab-pane" id="tab04">
+		                  <p>一个人静静地与岁月交错，于平淡之中细细体会生活的深意，去注视，去聆听，去感受那些带着希望的别离以及那些经受沧桑的相逢。</p>
+		                </div>
+		              </div>
+		          </div>
+		        </div>
+		      </li>
+		    </ul>
+		  </li>
+		  <li class="li02">
+		    <a class="a" href="javascript:;">收缩面板 <i class="iconfont icon-arrow-right"></i></a>
+		    <ul class="nav nav-pills nav-stacked ul03">
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">收缩面板</div>
+		          <div class="view-components">
+		            <div class="panel-group" id="accordion">
+		            	<div class="panel panel-default">
+		            		<div class="panel-heading">
+		            			<h4 class="panel-title">
+		            				<a data-toggle="collapse" data-parent="#accordion" 
+		            				   href="#collapseOne">
+		            					点击我进行展开，再次点击我进行折叠。第 1 部分
+		            				</a>
+		            			</h4>
+		            		</div>
+		            		<div id="collapseOne" class="panel-collapse collapse in">
+		            			<div class="panel-body">
+		            				Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+		            				cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
+		            				vice lomo.
+		            			</div>
+		            		</div>
+		            	</div>
+		            	<div class="panel panel-default">
+		            		<div class="panel-heading">
+		            			<h4 class="panel-title">
+		            				<a data-toggle="collapse" data-parent="#accordion" 
+		            				   href="#collapseTwo">
+		            					点击我进行展开，再次点击我进行折叠。第 2 部分
+		            				</a>
+		            			</h4>
+		            		</div>
+		            		<div id="collapseTwo" class="panel-collapse collapse">
+		            			<div class="panel-body">
+		            				Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+		            				cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
+		            				vice lomo.
+		            			</div>
+		            		</div>
+		            	</div>
+		            	<div class="panel panel-default">
+		            		<div class="panel-heading">
+		            			<h4 class="panel-title">
+		            				<a data-toggle="collapse" data-parent="#accordion" 
+		            				   href="#collapseThree">
+		            					点击我进行展开，再次点击我进行折叠。第 3 部分
+		            				</a>
+		            			</h4>
+		            		</div>
+		            		<div id="collapseThree" class="panel-collapse collapse">
+		            			<div class="panel-body">
+		            				Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+		            				cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
+		            				vice lomo.
+		            			</div>
+		            		</div>
+		            	</div>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		    </ul>
+		  </li>
+		  <li class="li02">
+		    <a class="a" href="javascript:;">轮播图 <i class="iconfont icon-arrow-right"></i></a>
+		    <ul class="nav nav-pills nav-stacked ul03">
+		      <li class="li03">
+		        <div class="box">
+		          <div class="operation opera2">
+		            <span class="label label-primary drag">拖动</span>
+		            <span class="label label-primary remove">删除</span>
+		            <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+		          </div>
+		          <div class="title">轮播图</div>
+		          <div class="view-components">
+		            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		              <ol class="carousel-indicators">
+		                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		              </ol>
+		              <div class="carousel-inner" role="listbox">
+		                <div class="item active">
+		                  <img src="/images/banner1.jpg" alt="...">
+		                  <div class="carousel-caption">
+		                    <h4>图片一</h4>
+		                  </div>
+		                </div>
+		                <div class="item">
+		                  <img src="/images/banner2.jpg" alt="...">
+		                  <div class="carousel-caption">
+		                    <h4>图片二</h4>
+		                  </div>
+		                </div>
+		                <div class="item">
+		                  <img src="/images/banner3.jpg" alt="...">
+		                  <div class="carousel-caption">
+		                    <h4>图片三</h4>
+		                  </div>
+		                </div>
+		              </div>
+		              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		                <span class="glyphicon-chevron-left" aria-hidden="true"><img src="/images/left.png" /></span>
+		                <span class="sr-only">Previous</span>
+		              </a>
+		              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		                <span class="glyphicon-chevron-right" aria-hidden="true"><img src="/images/right.png" /></span>
+		                <span class="sr-only">Next</span>
+		              </a>
+		            </div>
+		          </div>
+		        </div>
+		      </li>
+		    </ul>
+		  </li>
+        </ul>
+      </li>
+      <li class="li01">
+        <a href="javascript:;" class="li01-a"><i class="iconfont icons icon-all"></i>扩展组件<i class="iconfont icon-arrow-right"></i></a>
+        <ul class="nav nav-pills nav-stacked ul02">
+          <li class="li02">
+            <a class="a" href="javascript:;">轮播图 <i class="iconfont icon-arrow-right"></i></a>
+            <ul class="nav nav-pills nav-stacked ul03">
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">风格1</div>
+                  <div class="view-components">
+					<div class="swiper-container test-1">
+					    <div class="swiper-wrapper">
+					      <div class="swiper-slide"><p><a href="#"><img src="/images/1.jpg" /></a></p><h4>风吹雨成花，时间追不上白马。你年少掌心的梦话，依然紧握着吗？</h4></div>
+					      <div class="swiper-slide"><p><a href="#"><img src="/images/2.jpg" /></a></p><h4>外面的花，开始了挣扎。东风来了，却已经用尽了全力，然后就开始和大地有了距离。</h4></div>
+					      <div class="swiper-slide"><p><a href="#"><img src="/images/3.jpg" /></a></p><h4>最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好。</h4></div>
+					    </div>
+					    <div class="swiper-pagination"></div>
+					</div>
+					  <style>
+					    .test-1 .swiper-slide {
+						  transition: 300ms;
+						  transform: scale(0.8);
+					    }
+						.test-1 .swiper-slide img {
+							width: 100%;
+						}
+						.test-1 .swiper-slide-active,.test-1 .swiper-slide-duplicate-active{
+					      transform: scale(1) !important;
+						}
+					</style>
+					<script>
+					    var swiper = new Swiper('.test-1', {
+					      slidesPerView: 3,
+					      spaceBetween: 0,
+						  centeredSlides: true,
+						  loop: true,
+						  autoplay: {
+							delay: 2500,
+							disableOnInteraction: false,
+						  },
+					      pagination: {
+					        el: '.test-1 .swiper-pagination',
+					        clickable: true,
+					      },
+					    });
+					</script>
+                  </div>
+                </div>
+              </li>
+              <li class="li03">
+                <div class="box">
+                  <div class="operation opera2">
+                    <span class="label label-primary drag">拖动</span>
+                    <span class="label label-primary remove">删除</span>
+                    <span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+                  </div>
+                  <div class="title">风格2</div>
+                  <div class="view-components">
+					<div class="swiper-container test-2">
+						<div class="swiper-wrapper">
+						  <div class="swiper-slide" style="background-image:url(../images/1.jpg)"></div>
+						  <div class="swiper-slide" style="background-image:url(../images/2.jpg)"></div>
+						  <div class="swiper-slide" style="background-image:url(../images/3.jpg)"></div>
+						  <div class="swiper-slide" style="background-image:url(../images/4.jpg)"></div>
+						  <div class="swiper-slide" style="background-image:url(../images/5.jpg)"></div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+					<style>
+						.test-2 {
+						  width: 300px;
+						  height: 300px;
+						  position: relative;
+						  left: 50%;
+						  margin-left: -150px;
+						}
+						.test-2 .swiper-slide {
+						  background-position: center;
+						  background-size: cover;
+						}
+					</style>
+					<script>
+					var swiper = new Swiper('.test-2', {
+					  effect: 'cube',
+					  loop: true,
+					  autoplay: {
+						delay: 2500,
+						disableOnInteraction: false,
+					  },
+					  cubeEffect: {
+						shadow: true,
+						slideShadows: true,
+						shadowOffset: 20,
+						shadowScale: 0.94,
+					  },
+					  pagination: {
+						el: '.test-2 .swiper-pagination',
+					  },
+					});
+					</script>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="li01 level01">
+        <a href="javascript:;" class="li01-a"><i class="iconfont icons icon-template"></i>页面模板<i class="iconfont icon-arrow-right"></i></a>
+        <ul class="nav nav-pills nav-stacked ul02">
+		  <li class="li02">
+			  <div class="layoutRow">
+			    <div class="operation opera1">
+			      <span class="label label-primary drag">拖动</span>
+			      <span class="label label-primary remove">删除</span>
+			    </div>
+			    <div class="title">
+			      模板1
+			    </div>
+			    <div class="view-layout">
+					<!--模板开始-->
+					<div class="layoutRow ui-draggable">
+						<div class="operation opera1">
+							<span class="label label-primary drag">拖动</span>
+							<span class="label label-primary remove">删除</span>
+						</div>
+						<div class="title">
+							12
+						</div>
+						<div class="view-layout">
+							<div class="row row-fluid ">
+								<div class="col-xs-12 col-md-12 column ui-sortable">
+									<div class="box ui-draggable">
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">通用导航</div>
+										<div class="view-components">
+											<nav class="navbar navbar-default">
+												<div class="container-fluid">
+													<div class="navbar-header">
+														<a class="navbar-brand" href="#">网站名称</a>
+													</div>
+													<div class="collapse navbar-collapse">
+														<ul class="nav navbar-nav">
+															<li>
+																<a href="#">导航栏1</a>
+															</li>
+															<li>
+																<a href="#">导航栏2</a>
+															</li>
+															<li class="dropdown">
+																<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">导航栏3 <span class="caret"></span>
+																</a>
+																<ul class="dropdown-menu">
+																	<li>
+																		<a href="#">下拉子栏目1</a>
+																	</li>
+																	<li>
+																		<a href="#">下拉子栏目2</a>
+																	</li>
+																	<li>
+																		<a href="#">下拉子栏目3</a>
+																	</li>
+																	<li>
+																		<a href="#">下拉子栏目4</a>
+																	</li>
+																	<li>
+																		<a href="#">下拉子栏目5</a>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+														<form class="navbar-form navbar-left">
+															<div class="form-group">
+																<input type="text" class="form-control" placeholder="请输入搜索内容...">
+															</div>
+															<button type="submit" class="btn btn-default">搜索</button>
+														</form>
+														<ul class="nav navbar-nav navbar-right">
+															<li>
+																<a href="#">注册</a>
+															</li>
+															<li>
+																<a href="#">登录</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</nav>
+										</div>
+									</div>
+									<div class="box ui-draggable">
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">轮播图</div>
+										<div class="view-components">
+											<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+												<ol class="carousel-indicators">
+													<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+													<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+													<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+												</ol>
+												<div class="carousel-inner" role="listbox">
+													<div class="item active">
+														<img src="/images/banner1.jpg" alt="...">
+														<div class="carousel-caption">
+															<h4>图片一</h4>
+														</div>
+													</div>
+													<div class="item">
+														<img src="/images/banner2.jpg" alt="...">
+														<div class="carousel-caption">
+															<h4>图片二</h4>
+														</div>
+													</div>
+													<div class="item">
+														<img src="/images/banner3.jpg" alt="...">
+														<div class="carousel-caption">
+															<h4>图片三</h4>
+														</div>
+													</div>
+												</div>
+												<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+													<span class="glyphicon-chevron-left" aria-hidden="true">
+														<img src="/images/left.png">
+													</span>
+													<span class="sr-only">Previous</span>
+												</a>
+												<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+													<span class="glyphicon-chevron-right" aria-hidden="true">
+														<img src="/images/right.png">
+													</span>
+													<span class="sr-only">Next</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="box ui-draggable">
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">空行</div>
+										<div class="view-components">
+											<br>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="layoutRow ui-draggable">
+						<div class="operation opera1">
+							<span class="label label-primary drag">拖动</span>
+							<span class="label label-primary remove">删除</span>
+						</div>
+						<div class="title">
+							4 8
+						</div>
+						<div class="view-layout">
+							<div class="row row-fluid ">
+								<div class="col-xs-4 col-md-4 column ui-sortable">
+									<div class="box ui-draggable">
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">中等标题</div>
+										<div class="view-components">
+											<h3>h3. 这是中等标题.</h3>
+										</div>
+									</div>
+									<div class="box ui-draggable">
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">带徽章列表组</div>
+										<div class="view-components">
+											<ul class="list-group">
+												<li class="list-group-item">
+													<span class="badge">14</span>雨天，记得带把伞
+												</li>
+												<li class="list-group-item">
+													<span class="badge">14</span>红尘陌上雪，散落随花开
+												</li>
+												<li class="list-group-item">
+													<span class="badge">14</span>告别是我们最好的归宿
+												</li>
+												<li class="list-group-item">
+													<span class="badge">14</span>等一个永远都不会来的人
+												</li>
+												<li class="list-group-item">
+													<span class="badge">14</span>没有你陪伴的日子，我真的好孤单
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="box ui-draggable">
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">中等标题</div>
+										<div class="view-components">
+											<h3>h3. 这是中等标题.</h3>
+										</div>
+									</div>
+									<div class="box ui-draggable">
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">左图</div>
+										<div class="view-components">
+											<div class="media">
+												<div class="media-left">
+													<a href="#">
+														<img class="media-object" src="/images/a.jpg">
+													</a>
+												</div>
+												<div class="media-body">
+													<h4 class="media-heading">雨天，记得带把伞</h4>
+													<p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="box ui-draggable">
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">左图</div>
+										<div class="view-components">
+											<div class="media">
+												<div class="media-left">
+													<a href="#">
+														<img class="media-object" src="/images/a.jpg">
+													</a>
+												</div>
+												<div class="media-body">
+													<h4 class="media-heading">雨天，记得带把伞</h4>
+													<p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="box ui-draggable" >
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">左图</div>
+										<div class="view-components">
+											<div class="media">
+												<div class="media-left">
+													<a href="#">
+														<img class="media-object" src="/images/a.jpg">
+													</a>
+												</div>
+												<div class="media-body">
+													<h4 class="media-heading">雨天，记得带把伞</h4>
+													<p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="box ui-draggable" >
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">左图</div>
+										<div class="view-components">
+											<div class="media">
+												<div class="media-left">
+													<a href="#">
+														<img class="media-object" src="/images/a.jpg">
+													</a>
+												</div>
+												<div class="media-body">
+													<h4 class="media-heading">雨天，记得带把伞</h4>
+													<p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-8 col-md-8 column ui-sortable">
+									<div class="box ui-draggable" >
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">中等标题</div>
+										<div class="view-components">
+											<h3>h3. 这是中等标题.</h3>
+										</div>
+									</div>
+									<div class="box ui-draggable" >
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">3列</div>
+										<div class="view-components">
+											<div class="row">
+												<div class="col-xs-4">
+													<div class="thumbnail">
+														<img alt="300x200" src="/images/1.jpg">
+														<div class="caption" contenteditable="true">
+															<h3>我的幸福刚刚好</h3>
+															<p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+															<p>
+																<a class="btn btn-primary" href="#">浏览</a>
+																<a class="btn btn-default" href="#">分享</a>
+															</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-4">
+													<div class="thumbnail">
+														<img alt="300x200" src="/images/2.jpg">
+														<div class="caption" contenteditable="true">
+															<h3>东风慢慢地走了</h3>
+															<p class="text-muted">外面的花，开始了挣扎。东风来了，却已经用尽了全力，然后就开始和大地有了距离。也许是东风感到了疲惫，也许是东风很累，想要留下一段时光的静谧。</p>
+															<p>
+																<a class="btn btn-primary" href="#">浏览</a>
+																<a class="btn btn-default" href="#">分享</a>
+															</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-4">
+													<div class="thumbnail">
+														<img alt="300x200" src="/images/3.jpg">
+														<div class="caption" contenteditable="true">
+															<h3>时间煮雨</h3>
+															<p class="text-muted">风吹雨成花，时间追不上白马。你年少掌心的梦话，依然紧握着吗？云翻涌成夏，眼泪被岁月蒸发，这条路上的你我她，有谁迷路吗……</p>
+															<p>
+																<a class="btn btn-primary" href="#">浏览</a>
+																<a class="btn btn-default" href="#">分享</a>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="box ui-draggable" >
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">3列</div>
+										<div class="view-components">
+											<div class="row">
+												<div class="col-xs-4">
+													<div class="thumbnail">
+														<img alt="300x200" src="/images/1.jpg">
+														<div class="caption" contenteditable="true">
+															<h3>我的幸福刚刚好</h3>
+															<p class="text-muted">最适合的彼此，不是一开始的一拍即合，而是愿意在未来漫长岁月中为彼此变成更好，爱情不存在天造地设的一对，只有彼此努力，成为适合我们的对方。</p>
+															<p>
+																<a class="btn btn-primary" href="#">浏览</a>
+																<a class="btn btn-default" href="#">分享</a>
+															</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-4">
+													<div class="thumbnail">
+														<img alt="300x200" src="/images/2.jpg">
+														<div class="caption" contenteditable="true">
+															<h3>东风慢慢地走了</h3>
+															<p class="text-muted">外面的花，开始了挣扎。东风来了，却已经用尽了全力，然后就开始和大地有了距离。也许是东风感到了疲惫，也许是东风很累，想要留下一段时光的静谧。</p>
+															<p>
+																<a class="btn btn-primary" href="#">浏览</a>
+																<a class="btn btn-default" href="#">分享</a>
+															</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-4">
+													<div class="thumbnail">
+														<img alt="300x200" src="/images/3.jpg">
+														<div class="caption" contenteditable="true">
+															<h3>时间煮雨</h3>
+															<p class="text-muted">风吹雨成花，时间追不上白马。你年少掌心的梦话，依然紧握着吗？云翻涌成夏，眼泪被岁月蒸发，这条路上的你我她，有谁迷路吗……</p>
+															<p>
+																<a class="btn btn-primary" href="#">浏览</a>
+																<a class="btn btn-default" href="#">分享</a>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="box ui-draggable" >
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">右对齐翻页</div>
+										<div class="view-components">
+											<div class="text-right">
+												<nav aria-label="Page navigation">
+													<ul class="pagination">
+														<li>
+															<a href="#" aria-label="Previous">
+																<span aria-hidden="true">«</span>
+															</a>
+														</li>
+														<li>
+															<a href="#">1</a>
+														</li>
+														<li>
+															<a href="#">2</a>
+														</li>
+														<li>
+															<a href="#">3</a>
+														</li>
+														<li>
+															<a href="#">4</a>
+														</li>
+														<li>
+															<a href="#">5</a>
+														</li>
+														<li>
+															<a href="#" aria-label="Next">
+																<span aria-hidden="true">»</span>
+															</a>
+														</li>
+													</ul>
+												</nav>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="layoutRow ui-draggable">
+						<div class="operation opera1">
+							<span class="label label-primary drag">拖动</span>
+							<span class="label label-primary remove">删除</span>
+						</div>
+						<div class="title">
+							12
+						</div>
+						<div class="view-layout">
+							<div class="row row-fluid ">
+								<div class="col-xs-12 col-md-12 column ui-sortable">
+									<div class="box ui-draggable">
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">中等标题</div>
+										<div class="view-components">
+											<h3>h3. 这是中等标题.</h3>
+										</div>
+									</div>
+									<div class="box ui-draggable">
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">横向列表</div>
+										<div class="view-components">
+											<ul class="list-inline">
+												<li>新闻资讯</li>
+												<li>体育竞技</li>
+												<li>娱乐八卦</li>
+												<li>前沿科技</li>
+												<li>环球财经</li>
+												<li>天气预报</li>
+												<li>房产家居</li>
+												<li>网络游戏</li>
+											</ul>
+										</div>
+									</div>
+									<div class="box ui-draggable">
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">横线</div>
+										<div class="view-components">
+											<hr>
+										</div>
+									</div>
+									<div class="box ui-draggable" >
+										<div class="operation opera2">
+											<span class="label label-primary drag">拖动</span>
+											<span class="label label-primary remove">删除</span>
+											<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+										</div>
+										<div class="title">居中文本</div>
+										<div class="view-components">
+											<p class="text-center">这是一段居中的文本</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--模板结束-->
+			    </div>
+			  </div>
+		  </li>
+		  <li class="li02">
+			  <div class="layoutRow ui-draggable" >
+			  	<div class="operation opera1">
+			  		<span class="label label-primary drag">拖动</span>
+			  		<span class="label label-primary remove">删除</span>
+			  	</div>
+			  	<div class="title">
+			  		模板2
+			  	</div>
+			  	<div class="view-layout">
+			  		<div class="row row-fluid ">
+			  			<div class="col-xs-12 col-md-12 column ui-sortable">
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">通用导航</div>
+			  					<div class="view-components">
+			  						<nav class="navbar navbar-default">
+			  							<div class="container-fluid">
+			  								<div class="navbar-header">
+			  									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			  										<span class="sr-only">Toggle navigation</span>
+			  										<span class="icon-bar"></span>
+			  										<span class="icon-bar"></span>
+			  										<span class="icon-bar"></span>
+			  									</button>
+			  									<a class="navbar-brand" href="#">网站名称</a>
+			  								</div>
+			  								<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  									<ul class="nav navbar-nav">
+			  										<li>
+			  											<a href="#">导航栏1</a>
+			  										</li>
+			  										<li>
+			  											<a href="#">导航栏2</a>
+			  										</li>
+			  										<li class="dropdown">
+			  											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">导航栏3 <span class="caret"></span>
+			  											</a>
+			  											<ul class="dropdown-menu">
+			  												<li>
+			  													<a href="#">下拉子栏目1</a>
+			  												</li>
+			  												<li>
+			  													<a href="#">下拉子栏目2</a>
+			  												</li>
+			  												<li>
+			  													<a href="#">下拉子栏目3</a>
+			  												</li>
+			  												<li>
+			  													<a href="#">下拉子栏目4</a>
+			  												</li>
+			  												<li>
+			  													<a href="#">下拉子栏目5</a>
+			  												</li>
+			  											</ul>
+			  										</li>
+			  									</ul>
+			  									<form class="navbar-form navbar-left">
+			  										<div class="form-group">
+			  											<input type="text" class="form-control" placeholder="请输入搜索内容...">
+			  										</div>
+			  										<button type="submit" class="btn btn-default">搜索</button>
+			  									</form>
+			  									<ul class="nav navbar-nav navbar-right">
+			  										<li>
+			  											<a href="#">注册</a>
+			  										</li>
+			  										<li>
+			  											<a href="#">登录</a>
+			  										</li>
+			  									</ul>
+			  								</div>
+			  							</div>
+			  						</nav>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">路径导航</div>
+			  					<div class="view-components">
+			  						<ol class="breadcrumb">
+			  							<li>
+			  								<a href="#">主页</a>
+			  							</li>
+			  							<li class="active">产品列表</li>
+			  						</ol>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">全屏图片</div>
+			  					<div class="view-components">
+			  						<p>
+			  							<img src="/images/list_banner.jpg" style="width:100%;">
+			  						</p>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">空行</div>
+			  					<div class="view-components">
+			  						<br>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">居中文本</div>
+			  					<div class="view-components">
+			  						<h3 class="text-center">这是一段居中的文本</h3>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">居中文本</div>
+			  					<div class="view-components">
+			  						<p class="text-center">这是一段居中的文本</p>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">空行</div>
+			  					<div class="view-components">
+			  						<br>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">左图</div>
+			  					<div class="view-components">
+			  						<div class="media">
+			  							<div class="media-left">
+			  								<a href="#">
+			  									<img class="media-object" src="/images/a.jpg">
+			  								</a>
+			  							</div>
+			  							<div class="media-body">
+			  								<h4 class="media-heading">雨天，记得带把伞</h4>
+			  								<p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+			  							</div>
+			  						</div>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">左图</div>
+			  					<div class="view-components">
+			  						<div class="media">
+			  							<div class="media-left">
+			  								<a href="#">
+			  									<img class="media-object" src="/images/a.jpg">
+			  								</a>
+			  							</div>
+			  							<div class="media-body">
+			  								<h4 class="media-heading">雨天，记得带把伞</h4>
+			  								<p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+			  							</div>
+			  						</div>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">左图</div>
+			  					<div class="view-components">
+			  						<div class="media">
+			  							<div class="media-left">
+			  								<a href="#">
+			  									<img class="media-object" src="/images/a.jpg">
+			  								</a>
+			  							</div>
+			  							<div class="media-body">
+			  								<h4 class="media-heading">雨天，记得带把伞</h4>
+			  								<p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+			  							</div>
+			  						</div>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">左图</div>
+			  					<div class="view-components">
+			  						<div class="media">
+			  							<div class="media-left">
+			  								<a href="#">
+			  									<img class="media-object" src="/images/a.jpg">
+			  								</a>
+			  							</div>
+			  							<div class="media-body">
+			  								<h4 class="media-heading">雨天，记得带把伞</h4>
+			  								<p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+			  							</div>
+			  						</div>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">左图</div>
+			  					<div class="view-components">
+			  						<div class="media">
+			  							<div class="media-left">
+			  								<a href="#">
+			  									<img class="media-object" src="/images/a.jpg">
+			  								</a>
+			  							</div>
+			  							<div class="media-body">
+			  								<h4 class="media-heading">雨天，记得带把伞</h4>
+			  								<p>岁月如梭，风雨人生，堪那荆棘载途，怎就一个“累”字概括。从来都是阴差阳错，错误的故事，寒了一季花开，冷了一掬花落。</p>
+			  							</div>
+			  						</div>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">空行</div>
+			  					<div class="view-components">
+			  						<br>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">居中翻页</div>
+			  					<div class="view-components">
+			  						<div class="text-center">
+			  							<nav aria-label="Page navigation">
+			  								<ul class="pagination">
+			  									<li>
+			  										<a href="#" aria-label="Previous">
+			  											<span aria-hidden="true">«</span>
+			  										</a>
+			  									</li>
+			  									<li>
+			  										<a href="#">1</a>
+			  									</li>
+			  									<li>
+			  										<a href="#">2</a>
+			  									</li>
+			  									<li>
+			  										<a href="#">3</a>
+			  									</li>
+			  									<li>
+			  										<a href="#">4</a>
+			  									</li>
+			  									<li>
+			  										<a href="#">5</a>
+			  									</li>
+			  									<li>
+			  										<a href="#" aria-label="Next">
+			  											<span aria-hidden="true">»</span>
+			  										</a>
+			  									</li>
+			  								</ul>
+			  							</nav>
+			  						</div>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" style="display: block; position: relative; opacity: 1; left: 0px; top: 0px;">
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">空行</div>
+			  					<div class="view-components">
+			  						<br>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" style="display: block; position: relative; opacity: 1; left: 0px; top: 0px;">
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">中等标题</div>
+			  					<div class="view-components">
+			  						<h3>h3. 这是中等标题.</h3>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">横向列表</div>
+			  					<div class="view-components">
+			  						<ul class="list-inline">
+			  							<li>新闻资讯</li>
+			  							<li>体育竞技</li>
+			  							<li>娱乐八卦</li>
+			  							<li>前沿科技</li>
+			  							<li>环球财经</li>
+			  							<li>天气预报</li>
+			  							<li>房产家居</li>
+			  							<li>网络游戏</li>
+			  						</ul>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">横线</div>
+			  					<div class="view-components">
+			  						<hr>
+			  					</div>
+			  				</div>
+			  				<div class="box ui-draggable" >
+			  					<div class="operation opera2">
+			  						<span class="label label-primary drag">拖动</span>
+			  						<span class="label label-primary remove">删除</span>
+			  						<span class="label label-primary edit-model" data-target="#editorModal" data-toggle="modal">编辑</span>
+			  					</div>
+			  					<div class="title">居中文本</div>
+			  					<div class="view-components">
+			  						<p class="text-center">这是一段居中的文本</p>
+			  					</div>
+			  				</div>
+			  			</div>
+			  		</div>
+			  	</div>
+			  </div>
+		  </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="col-xs-10 rightLayout">
+    <nav class="navbar navbar-default myNavbar">
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="item"><a class="a" href="/website/study.html" target="_blank"><i class="iconfont icon-play"></i>视频教程<span class="round"></span></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="item"><a class="a" href="javascript:;" onclick="edit()"><i class="iconfont icon-editor"></i>编辑</a></li>
+          <li class="item"><a class="a" href="javascript:;" onclick="preview()"><i class="iconfont icon-browse"></i>预览</a></li>
+          <li class="item"><a class="a" href="javascript:;" id="download" data-uid="<?php echo $user['id'];?>" data-money="<?php echo $user['money'];?>"><i class="iconfont icon-download"></i>下载</a></li>
+          <li class="item"><a class="a" href="javascript:;" id="clear"><i class="iconfont icon-ashbin"></i>清空</a></li>
+          <li class="item"><a class="a" href="javascript:;" id="add"><i class="iconfont icon-add1"></i>新增页面</a></li>
+          <li class="item"><a class="a" href="javascript:;" id="advise"><i class="iconfont icon-help"></i>问题疑问?</a></li>
+          <?php if($user['id']){?>
+          <li class="item">
+			<a class="a" href="/user" target="_blank">欢迎你,
+				<span class="my-text-primary">
+					<?php echo substr_replace($user['tel'],'****','3','4'); ?>
+				</span>
+			</a>
+		  </li>
+		  <li class="item"><a class="a logout" href="javascript:;">退出</a></li>
+          <?php }else{ ?>
+          <li class="item"><a class="a register-box" href="javascript:;">注册</a></li>
+          <li class="item"><a class="a login-box" href="javascript:;">登录</a></li>
+          <?php }?>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="layout-body">
+		<div class="swiper-container my-swiper-1">
+			<ul class="nav nav-tabs layout-nav-ul swiper-wrapper">
+				<li class="swiper-slide active"><a href="#page" aria-controls="page" role="tab" data-toggle="tab">首页（index.html）</a></li>
+				<?php if(!empty($pages)){ foreach($pages as $item){?>
+				<li class="swiper-slide"><a href="#page<?php echo $item['id'];?>" data-id="<?php echo $item['id'];?>" data-title="<?php echo $item['page_name'];?>" data-file="<?php echo $item['file_name'];?>" aria-controls="page<?php echo $item['id'];?>" role="tab" data-toggle="tab"><?php echo $item['page_name'];?> （<?php echo $item['file_name'];?>.html）<i class="iconfont icon-set"></i><i class="iconfont icon-guanbi"></i></a></li>
+				<?php }}?>
+			</ul>
+			<div class="swiper-button-next swiper-button-arrow"></div>
+			<div class="swiper-button-prev swiper-button-arrow"></div>
+		</div>
+	  
+      <ul class="tab-content layout-box-ul">
+        <li class="tab-pane layout-box-li active" id="page" data-title="首页" data-id="0" data-file="index">
+          <div class="layout-box ui-sortable container">
+			  <div id="ImporNotes">请拖动到此区域内</div>
+          </div>
+        </li>
+        <?php if(!empty($pages)){ foreach($pages as $item){?>
+        <li class="tab-pane layout-box-li" id="page<?php echo $item['id'];?>" data-title="<?php echo $item['page_name'];?>" data-file="<?php echo $item['file_name'];?>" data-id="<?php echo $item['id'];?>">
+          <div class="layout-box ui-sortable container">
+			  <div id="ImporNotes">请拖动到此区域内</div>
+          </div>
+        </li>
+        <?php }}?>
+      </ul>
+	  
+    </div>
+
+  </div>
+</div>
+
+<!--弹出的编辑框-->
+<div class="modal fade" role="dialog" id="editorModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p class="modal-title">编辑</p>
+      </div>
+      <div class="modal-body">
+        <textarea id="editorModalText">
+		</textarea>
+      </div>
+      <div class="modal-footer">
+        <a id="saveEditorModalText" class="btn btn-primary my-btn-primary" data-dismiss="modal">保存</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="/website/js/jquery.min.js"></script>
+<script type="text/javascript" src="/website/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/website/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/website/standard-all/ckeditor.js"></script>
+<script type="text/javascript" src="/website/js/layer/layer.js"></script>
+<script type="text/javascript" src="/website/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #f1f2f6;
+}
+a:hover {
+	text-decoration: none;
+}
+.study-list .thumbnail .img-box {
+	width: 100%;
+	height: 240px;
+	overflow: hidden;
+	position: relative;
+	background-color: #efefef;
+}
+.study-list .thumbnail .img-box img {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.study-list .thumbnail .caption h4 {
+	font-weight: bold;
+}
+.study-list .thumbnail:hover {
+	border-color: #1890ff;
+}
+.study-list .thumbnail:hover .caption h4 {
+	color: #1890ff;
+}

@@ -1,0 +1,682 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #f1f2f6;
+}
+a:hover, a:focus {
+	text-decoration: none;
+	outline: none;
+}
+.btn, .label, .badge {
+	margin: 0 10px 0 0;
+}
+.col-xs-5 {
+	width: 20%;
+}
+.media {
+	margin: 15px 0;
+}
+.pagination {
+	margin: 0;
+}
+.layui-layer {
+	border-radius: 0 !important;
+}
+.layui-layer-title {
+	border-radius: 0 !important;
+}
+.layui-layer-btn a {
+	line-height: 26px !important;
+}
+.layui-layer-btn, .layui-layer-dialog .layui-layer-content {
+	text-align: center !important;
+}
+.layui-layer-dialog .layui-layer-content .iconfont {
+	font-size: 50px;
+}
+.layui-layer-dialog .layui-layer-content .icon-prompt {
+	color: #fa8c16;
+}
+.layui-layer-dialog .layui-layer-content .icon-reeor {
+	color: #f5222d;
+}
+#editorModal .modal-dialog {
+	width: 60%;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0 auto;
+}
+#editorModal .modal-content {
+	border-radius: 0;
+}
+.my-btn-primary {
+	background-color: #1890ff;
+	border-color: #1890ff;
+	color: #fff;
+}
+.my-btn-primary:hover, .my-btn-primary:focus, .my-btn-primary:active:focus, .my-btn-primary.active:focus, .my-btn-primary.focus, .my-btn-primary:active.focus, .my-btn-primary.active.focus {
+	background-color: #096dd9;
+	border-color: #096dd9;
+	outline: none;
+	color: #fff;
+}
+.my-text-primary {
+	color: #1890ff;
+}
+.sp-hidden {
+    display: none !important;
+}
+.new-background {
+	background-color: #101010;
+	border: none;
+}
+.new-background a {
+	color: #fff !important;
+}
+.new-background a:hover {
+	background-color: transparent !important;
+	color: #ccc !important;
+}
+.empty-line {
+	height: 20px;
+}
+
+/* main */
+.main {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+.main .phone-box {
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+.main .leftLayout {
+	padding: 0;
+	width: 200px;
+	min-height: 100%;
+	background-color: #001e3a;
+	-moz-box-shadow:5px 0 8px #999;
+	-webkit-box-shadow:5px 0 8px #999;
+	box-shadow:5px 0 8px #999;
+	z-index: 9999;
+	transition: all 0.5s;
+}
+.main .leftLayout .logo {
+	width: 100%;
+	height: 80px;
+	padding: 0;
+	background-color: #001e3a;
+	overflow: hidden;
+}
+.main .leftLayout .logo .font {
+	font-size: 18px;
+	letter-spacing: 1px;
+	line-height: 20px;
+	margin: 20px 0;
+	color: #fff;
+	position: relative;
+	border-left: 5px solid #1890ff;
+	padding-left: 10px;
+}
+.main .leftLayout .logo .font small {
+	color: #fff;
+	font-size: 14px;
+	line-height: 20px;
+}
+.main .leftLayout .ul01 {
+	width: 100%;
+	height: calc(100% - 80px);
+}
+.main .leftLayout .ul01::-webkit-scrollbar {
+	width: 6px;
+	height: 0;
+	background-color: transparent;
+}
+.main .leftLayout .ul01::-webkit-scrollbar-thumb {
+	background-color: #1890ff;
+	border-radius: 6px;
+	height: 0;
+}
+.main .leftLayout .ul01 .li01 {
+	margin: 0 0 10px 0;
+}
+.main .leftLayout .ul01 .li01.open .li01-a .icon-arrow-right {
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); 	/* IE 9 */
+	-moz-transform:rotate(90deg); 	/* Firefox */
+	-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+	-o-transform:rotate(90deg); 	/* Opera */
+}
+.main .leftLayout .ul01 .li01.open .ul02 {
+	display: block;
+}
+.main .leftLayout .ul01 .li01 .operation {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.main .leftLayout .ul01 .li01 .operation .label {
+	padding: 0 5px;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	font-weight: normal;
+	font-size: 12px;
+	border-radius: 0;
+	background-color: #1890ff;
+}
+.main .leftLayout .ul01 .li01 .operation .remove, 
+.main .leftLayout .ul01 .li01 .operation .edit-model,
+.main .leftLayout .ul01 .li01 .operation .color,
+.main .leftLayout .ul01 .li01 .operation .add-list,
+.main .leftLayout .ul01 .li01 .operation .add-btn,
+.main .leftLayout .ul01 .li01 .operation .empty-line-value,
+.main .leftLayout .ul01 .li01 .operation .add-table-colspan,
+.main .leftLayout .ul01 .li01 .operation .delete-table-colspan,
+.main .leftLayout .ul01 .li01 .operation .add-table-rowspan,
+.main .leftLayout .ul01 .li01 .operation .delete-table-rowspan,
+.main .leftLayout .ul01 .li01 .operation .full,
+.main .leftLayout .ul01 .li01 .operation .center {
+	display: none;
+}
+.main .leftLayout .ul01 .li01 .view-layout, .main .leftLayout .ul01 .li01 .view-components {
+	display: none;
+	background-color: #fff;
+	-moz-box-shadow:0px 0px 10px #ccc; 
+	-webkit-box-shadow:0px 0px 10px #ccc; 
+	box-shadow:0px 0px 10px #ccc;
+}
+.main .leftLayout .ul01 .li01 .view-layout {
+	position: absolute;
+	width: 1200px;
+	left: 0;
+	bottom: 25px;
+}
+.main .leftLayout .ul01 .li01 .view-components {
+	position: absolute;
+	width: 1200px;
+	left: 0;
+	bottom: 25px;
+	padding: 15px;
+}
+.main .leftLayout .ul01 .li01 .view-layout .row-fluid {
+	background-color: #fff;
+}
+.main .leftLayout .ul01 .li01 .operation .drag {
+	cursor: move;
+}
+.main .leftLayout .ul01 .li01 .ul02 {
+	background-color: #00152a;
+	padding: 0;
+	display: none;
+}
+.main .leftLayout .ul01 .li01 .ul02 .li02 {
+	padding: 0;
+	position: relative;
+	margin: 0;
+}
+.main .leftLayout .ul01 .li01 .ul02 .li02.open .ul03 {
+	display: block;
+}
+.main .leftLayout .ul01 .li01.level01 .ul02 .li02 .layoutRow:hover .view-layout {
+	display: block;
+}
+.main .leftLayout .ul01 .li01 .ul02 .li02 .ul03 .li03 .box:hover .view-components {
+	display: block;
+}
+.main .leftLayout .ul01 .li01 .ul02 .li02 .a:hover, .main .leftLayout .ul01 .li01 .ul02 .li02 .a:focus {
+	background-color: #00080F;
+	color: #fff;
+}
+.main .leftLayout .ul01 .li01 .ul02 .li02.open .a {
+	background-color: #00080F;
+	color: #fff;
+}
+.main .leftLayout .ul01 .li01 .ul02 .li02.open .a .iconfont {
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); 	/* IE 9 */
+	-moz-transform:rotate(90deg); 	/* Firefox */
+	-webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+	-o-transform:rotate(90deg); 	/* Opera */
+}
+.main .leftLayout .ul01 .li01 .li01-a {
+	border-radius: 0;
+	padding: 10px 15px 10px 33px;
+	color: #fff;
+	position: relative;
+}
+.main .leftLayout .ul01 .li01 .ul02 .li02 .a {
+	border-radius: 0;
+	padding: 10px 15px 10px 33px;
+	color: #999;
+}
+.main .leftLayout .ul01 .li01 .li01-a:focus {
+	background-color: transparent;
+	outline: none;
+	color: #fff;
+}
+.main .leftLayout .ul01 .li01 .li01-a:hover, .main .leftLayout .ul01 .li01.open .li01-a {
+	background-color: #1890ff;
+	color: #fff;
+}
+.main .leftLayout .ul01 .li01 .li01-a .icons {
+	color: #fff;
+	font-size: 20px;
+	position: absolute;
+	top: 6px;
+	left: 10px;
+}
+.main .leftLayout .ul01 .li01 .li01-a .icon-arrow-right, .main .leftLayout .ul01 .li01 .ul02 .li02 .a .icon-arrow-right {
+	float: right;
+}
+.main .leftLayout .ul01 .li01.level01 .ul02 .li02 {
+	padding: 10px 15px 10px 33px;
+	position: relative;
+	margin: 0;
+}
+.main .leftLayout .ul01 .li01 .ul02 .li02 .title {
+	color: #fff;
+	line-height: 20px;
+}
+.main .leftLayout .ul01 .li01 .ul02 .li02 .ul03 {
+	background-color: #00080F;
+	padding: 0;
+	display: none;
+}
+.main .leftLayout .ul01 .li01 .ul02 .li02 .ul03 .li03 {
+	padding: 10px 15px 10px 33px;
+	position: relative;
+	margin: 0;
+}
+.main .rightLayout {
+	padding: 0;
+	width: calc(100% - 200px);
+	height: 100%;
+	transition: all 0.5s;
+}
+.main .rightLayout .myNavbar {
+	background-color: #fff;
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	height: 50px;
+	border-bottom: 1px solid #ddd;
+}
+.main .rightLayout .myNavbar .navbar-right {
+	margin-right: 0;
+}
+.main .rightLayout .myNavbar .navbar-left .item .a, .main .rightLayout .myNavbar .navbar-right .item .a {
+	color: #333;
+	position: relative;
+}
+.main .rightLayout .myNavbar .navbar-left .item .a .round {
+	width: 8px;
+	height: 8px;
+	display: block;
+	background-color: #f20;
+	border-radius: 50%;
+	position: absolute;
+	right: 5px;
+	top: 15px;
+}
+.main .rightLayout .myNavbar .navbar-left .item .a:hover, .main .rightLayout .myNavbar .navbar-right .item .a:hover {
+	color: #1890ff;
+	background-color: #f1f2f6;
+}
+.main .rightLayout .myNavbar .item .a {
+	padding: 15px 15px 15px 30px;
+}
+.main .rightLayout .myNavbar .navbar-right .item.active .a {
+	color: #1890ff;
+	background-color: #f1f2f6;
+}
+.main .rightLayout .myNavbar .navbar-right .item:nth-last-child(1) .a, .main .rightLayout .myNavbar .navbar-right .item:nth-last-child(2) .a {
+	padding: 15px;
+}
+.main .rightLayout .myNavbar .item .a .iconfont {
+	font-size: 20px;
+	position: absolute;
+	left: 10px;
+	font-weight: normal;
+}
+.main .rightLayout .myNavbar .navbar-right .item .a .edit {
+	display: none;
+}
+.main .rightLayout .layout-body {
+	width: 100%;
+	height: calc(100% - 50px);
+	overflow: hidden;
+}
+.main .rightLayout .layout-body .my-swiper-1 {
+	position: relative;
+}
+.main .rightLayout .layout-body .my-swiper-1 .swiper-button-next {
+	position: absolute;
+	right: 0;
+	width: 40px;
+	height: 40px;
+	background-color: #fff;
+	text-align: center;
+	border: none;
+	z-index: 9999;
+}
+.main .rightLayout .layout-body .my-swiper-1 .swiper-button-prev {
+	position: absolute;
+	right: 40px;
+	left: auto;
+	width: 40px;
+	height: 40px;
+	background-color: #fff;
+	text-align: center;
+	border: none;
+	z-index: 9999;
+}
+.main .rightLayout .layout-body .my-swiper-1 .swiper-button-arrow:after {
+	color: #1890ff;
+	line-height: 40px;
+	font-size: 14px;
+}
+.main .rightLayout .layout-body .layout-nav-ul {
+	background-color: #fff;
+	height: 40px;
+	width: 1000%;
+}
+.main .rightLayout .layout-body .layout-nav-ul li {
+	width: auto;
+}
+.main .rightLayout .layout-body .layout-nav-ul li:last-child {
+	margin-right: 80px;
+}
+.main .rightLayout .layout-body .layout-nav-ul li a {
+	font-size: 12px;
+	line-height: 40px;
+	padding: 0 20px;
+	margin: 0;
+	border-radius: 0;
+	color: #999;
+	border: none;
+}
+.main .rightLayout .layout-body .layout-nav-ul li a:hover {
+	background-color: #f1f2f6;
+	color: #333;
+	border: none;
+}
+.main .rightLayout .layout-body .layout-nav-ul li.active>a, .main .rightLayout .layout-body .layout-nav-ul li.active>a:focus, .main .rightLayout .layout-body .layout-nav-ul li.active>a:hover {
+	background-color: #f1f2f6;
+	color: #333;
+	border-bottom: 1px solid #f1f2f6;
+}
+.main .rightLayout .layout-body .layout-nav-ul li a .iconfont {
+	font-size: 12px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+.main .rightLayout .layout-body .layout-nav-ul li a .iconfont:hover {
+	color: #f5222d;
+}
+.main .rightLayout .layout-body .layout-box-ul {
+	width: 100%;
+	height: calc(100% - 40px);
+	padding: 0;
+	overflow: scroll;
+}
+.main .rightLayout .layout-body .layout-box-ul::-webkit-scrollbar {
+	width: 6px;
+	height: 0;
+	background-color: transparent;
+}
+.main .rightLayout .layout-body .layout-box-ul::-webkit-scrollbar-thumb {
+	background-color: #00152a;
+	border-radius: 6px;
+	height: 0;
+}
+.main .rightLayout .layout-body .layout-box-ul .layout-box-li {
+	width: 100%;
+	height: 100%;
+}
+.main .rightLayout .layout-body .layout-box-ul .layout-box-li .layout-box {
+	max-width: calc(100% - 100px);
+	min-height: 100%;
+	padding: 20px 0 10% 0;
+}
+.main .rightLayout .layout-body .layout-box-ul .layout-box-li .layout-box #ImporNotes {
+	width: 100%;
+	height: calc(100% - 40px);
+	border: 1px dashed #999;
+	line-height: 80px;
+	color: #999;
+	text-align: center;
+	position: absolute;
+}
+.preview .main .rightLayout .layout-body .layout-box-ul .layout-box-li .layout-box #ImporNotes {
+	left: 0;
+	left: 15px;
+	width: calc(100% - 30px);
+	height: calc(100% - 90px);
+}
+.edit .layout-box {
+	height: auto;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+}
+#layout-box {
+	margin-top: 90px;
+	padding: 0 15px;
+}
+#showNav {
+	display: none;
+	background-color: #1890ff;
+	color: #fff;
+	padding: 0 15px;
+	line-height: 40px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 10000;
+}
+.layout-box .title {
+	display: none;
+}
+.layout-box .box .view-layout, .layout-box .box .view-components {
+	display: block;
+}
+.box,.layoutRow {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.box.inline-elements {
+	display: inline-block;
+}
+.edit .layoutRow .view-layout .box {
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+.edit .layout-box .layoutRow {
+	margin: 0;
+	position: relative;
+}
+.edit .layout-box .layoutRow:hover {
+	background: rgba(0,0,0,0.1);
+	filter: alpha(opacity=10);
+}
+.edit .layout-box .layoutRow .drag {
+	display: none;
+	background-color: #1890ff;
+	position: absolute;
+	top: 0;
+	right: -40px;
+	width: 40px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	cursor: pointer;
+	z-index: 1;
+}
+.edit .layout-box .layoutRow .remove {
+	display: none;
+	background-color: #1890ff;
+	position: absolute;
+	top: 27px;
+	right: -40px;
+	width: 40px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	cursor: pointer;
+	z-index: 1;
+}
+.edit .layout-box .layoutRow:hover .drag, .edit .layout-box .layoutRow:hover .remove {
+	display: block;
+}
+.edit .layout-box .operation {
+	z-index: 2;
+	display: none;
+	position: absolute;
+	top: 0;
+	right: -40px;
+	overflow: hidden;
+	width: 40px;
+	height: auto;
+}
+.edit .layout-box .column:hover {
+	border: 1px dashed #1890ff;
+}
+.edit .layout-box .column .box:hover:after {
+	content: " ";
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.1);
+	filter: alpha(opacity=10);
+	border: 1px dashed #1890ff;
+}
+.edit .layout-box .layoutRow:hover .opera1 {
+	display: block;
+}
+.edit .layout-box .view-layout .box:hover .opera2 {
+	display: block;
+}
+.edit .layout-box .operation .label {
+	background-color: #1890ff;
+	position: static;
+	display: block;
+	width: 40px;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	cursor: pointer;
+	margin: 0 0 5px 0;
+}
+.edit .layout-box .view-layout .opera2 .drag,
+.edit .layout-box .view-layout .opera2 .remove,
+.edit .layout-box .view-layout .opera2 .edit-model,
+.edit .layout-box .view-layout .opera2 .color,
+.edit .layout-box .view-layout .opera2 .add-list,
+.edit .layout-box .view-layout .opera2 .add-btn,
+.edit .layout-box .view-layout .opera2 .empty-line-value,
+.edit .layout-box .view-layout .opera2 .add-table-colspan,
+.edit .layout-box .view-layout .opera2 .delete-table-colspan,
+.edit .layout-box .view-layout .opera2 .add-table-rowspan,
+.edit .layout-box .view-layout .opera2 .delete-table-rowspan {
+	background-color: #000;
+}
+.layout-box .row-fluid {
+	border: none;
+	margin: 0;
+	position: relative;
+	padding: 0;
+}
+.column {
+	margin: 0;
+	position: relative;
+	min-height: 20px;
+	padding: 0 15px;
+	border: 1px dashed #999;
+	background-color: #fff;
+}
+
+/* 预览时样式 */
+body.preview {
+	background-color: #fff;
+}
+body.preview .layout-box .box .view {
+	padding-top: 0;
+}
+body.preview .layout-box .drag, 
+body.preview .layout-box .remove, 
+body.preview .layout-box .edit-model,
+body.preview .layout-box .color,
+body.preview .layout-box .add-list,
+body.preview .layout-box .add-btn,
+body.preview .layout-box .empty-line-value,
+body.preview .layout-box .add-table-colspan,
+body.preview .layout-box .delete-table-colspan,
+body.preview .layout-box .add-table-rowspan,
+body.preview .layout-box .delete-table-rowspan,
+body.preview .layout-box .full,
+body.preview .layout-box .center {
+	display: none;
+}
+body.preview .main .rightLayout .layout-body .layout-nav-ul {
+	display: none;
+}
+body.preview .main .leftLayout {
+	transform: translateX(-200px);
+	width: 0;
+	transition: all 0.5s;
+}
+body.preview .main .rightLayout {
+	width: 100%;
+	transition: all 0.5s;
+}
+body.preview .column, body.preview .row-fluid, body.preview .layout-box .box {
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+}
+body.preview .layout-box .box, body.preview .layout-box .row-fluid {
+	padding-top:0;
+	background:none;
+}
+body.preview .layout-box .column {
+	padding: 0 15px;
+}
+
+/************************ new ************************/
+.glyphicon-chevron-left:before {
+	content: "";
+}
+.glyphicon-chevron-right:before {
+	content: "";
+}
+
+@media (max-width: 768px) {
+	.main .phone-box {
+		display: block;
+	}
+	.main .leftLayout, .main .rightLayout {
+		display: none;
+	}
+}
