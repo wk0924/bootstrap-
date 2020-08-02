@@ -623,7 +623,7 @@ $(document).ready(function() {
 				shade: 0.8,
 				shadeClose: true,
 				btn: false, //按钮
-				content: '<p>请登录后再下载，<a class="login-box" href="javascript:;" style="color:#1890ff;">立即登录</a></p>'
+				content: '<p>下载需要服务端支持，请前往官方网址制作并下载，<a target="_blank" href="http://wangye580.com/" style="color:#1890ff;">立即前往</a></p>'
 			});
 			$(".login-box").on('click', function() {
 				layer.close(layer.index);	//关闭当前层
@@ -633,7 +633,7 @@ $(document).ready(function() {
 					shadeClose: true,
 					shade: 0.8,
 					area: ['360px', '400px'],
-					content: ['?m=login', 'no']
+					content: ['login.html', 'no']
 				});
 			});
 		}
@@ -730,24 +730,24 @@ $(document).ready(function() {
 	});
 	//登录弹出层
 	$(".login-box").on('click', function() {
-		layer.open({
-			type: 2,
-			title: false,
-			shadeClose: true,
+		layer.confirm('',{
+			title: '系统提示',
+			area: ['280px', 'auto'],
 			shade: 0.8,
-			area: ['360px', '400px'],
-			content: ['?m=login', 'no']
+			shadeClose: true,
+			btn: false, //按钮
+			content: '<p>登录需要服务端支持，请前往官方网址进行登录，<a target="_blank" href="http://wangye580.com/" style="color:#1890ff;">立即前往</a></p>'
 		});
 	});
 	//注册弹出层
 	$(".register-box").on('click', function() {
-		layer.open({
-			type: 2,
-			title: false,
-			shadeClose: true,
+		layer.confirm('',{
+			title: '系统提示',
+			area: ['280px', 'auto'],
 			shade: 0.8,
-			area: ['360px', '400px'],
-			content: ['?m=register', 'no']
+			shadeClose: true,
+			btn: false, //按钮
+			content: '<p>注册需要服务端支持，请前往官方网址注册，<a target="_blank" href="http://wangye580.com/" style="color:#1890ff;">立即前往</a></p>'
 		});
 	});
 	//退出系统
